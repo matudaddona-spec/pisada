@@ -1,0 +1,92 @@
+@use "variables" as v;
+
+/* Tipografía y colores base de Pisada. */
+
+.uk-h1,
+.uk-h2,
+.uk-h3,
+.uk-h4,
+.uk-h5,
+.uk-h6,
+.uk-heading-2xlarge,
+.uk-heading-large,
+.uk-heading-medium,
+.uk-heading-small,
+.uk-heading-xlarge,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: v.$fuente-titulos;
+}
+html,
+body,
+p,
+span,
+.uk-button,
+.field__label,
+.field__input,
+.field__textarea,
+.field__select {
+    font-family: v.$fuente-texto;
+}
+html,
+body {
+    background: v.$fondo;
+}
+.background--primary,
+.background--primary-hover:hover {
+    background-color: v.$acento;
+}
+.text--primary,
+.text--primary-hover:hover,
+body {
+    color: v.$texto !important;
+}
+.contrast_text--primary,
+.contrast_text--primary-hover:hover {
+    color: v.$tinta-acento;
+}
+.checkbox__check:checked::before {
+    border: solid v.$acento;
+}
+.checkbox__check:checked,
+.checkbox__check:checked:focus {
+    border: 1px solid v.$acento;
+}
+.checkbox__check:checked + .checkout__label-text {
+    color: v.$acento;
+}
+.border--primary {
+    border: solid v.$acento;
+}
+.desktop-list__hover,
+.uk-section-block__title > span {
+    background-image: none;
+}
+.products-feed__categories-list::-webkit-scrollbar-thumb,
+.uk-navbar-dropdown > .desktop-list__menu::-webkit-scrollbar-thumb {
+    background: v.$acento;
+}
+.border-radius {
+    border-radius: 999px;
+}
+.border-radius-2x {
+    border-radius: 999px;
+}
+.field__input.border-radius,
+.field__select.border-radius,
+.field__textarea.border-radius {
+    border-radius: 12px;
+}
+.field__input.border-radius--plain,
+.field__select.border-radius--plain,
+.field__textarea.border-radius--plain {
+    border-radius: 12px;
+}
+.field__input.border-radius.field__input--right-button {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}

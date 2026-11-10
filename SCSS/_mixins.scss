@@ -1,0 +1,12 @@
+// Puntos de corte reutilizables para el diseño adaptable.
+@mixin hasta($ancho) {
+    @media (max-width: $ancho) {
+        @content;
+    }
+}
+
+@mixin desde($ancho) {
+    @media (min-width: $ancho) {
+        @content;
+    }
+}

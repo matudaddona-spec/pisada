@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Metadatos y hojas de estilo de la página -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="robots" content="noindex,nofollow" />
+        <title>Administración · Pisada</title>
+        <link rel="stylesheet" href="/CSS/administrador.css?v=pedidos-1" />
+    </head>
+    <body>
+        <header class="admin-header">
+            <a class="brand" href="/">
+                PISADA
+                <small>ADMINISTRACIÓN</small>
+            </a>
+            <div>
+                <a class="store-link" href="/" target="_blank" rel="noopener">Ver tienda ↗</a>
+                <span id="account"></span>
+                <a class="store-link" href="/admin/salir">Cerrar sesión</a>
+            </div>
+        </header>
+        <!-- Panel de productos, inventario e historial -->
+        <main class="admin-main">
+            <div class="page-head">
+                <div>
+                    <p class="eyebrow">TU CATÁLOGO, AL DÍA</p>
+                    <h1>Productos y stock</h1>
+                    <p>Cargá modelos, organizá las fotos y controlá los pares disponibles.</p>
+                </div>
+                <button id="new-product" class="primary" disabled>＋ Nuevo modelo</button>
+            </div>
+            <p id="notice" class="notice" role="status" aria-live="polite">Cargando tu catálogo…</p>
+            <section class="stats" aria-label="Resumen del inventario">
+                <div>
+                    <span>Modelos publicados</span>
+                    <strong id="published-count">—</strong>
+                </div>
+                <div>
+                    <span>Pares disponibles</span>
+                    <strong id="units-count">—</strong>
+                </div>
+                <div>
+                    <span>Combinaciones sin stock</span>
+                    <strong id="empty-count">—</strong>
+                </div>
+            </section>
+            <nav class="tabs" aria-label="Secciones de administración">
+                <button id="products-tab" class="active" aria-pressed="true">Productos</button>
+                <button id="orders-tab" aria-pressed="false">
+                    Pedidos
+                    <span id="orders-count">0</span>
+                </button>
+                <button id="history-tab" aria-pressed="false">Movimientos</button>
+                <button id="trash-tab" aria-pressed="false">
+                    Papelera
+                    <span id="trash-count">0</span>
+                </button>
+            </nav>
+            <section id="products-panel">
+                <div class="toolbar">
+                    <label class="search-field">
+                        <span class="sr-only">Buscar un modelo</span>
+                        <input
+                            id="admin-search"
+                            type="search"
+                            placeholder="Buscar modelo, categoría o color"
+                        />
+                    </label>
+                    <label>
+                        <span class="sr-only">Filtrar categoría</span>
+                        <select id="admin-category">
+                            <option value="">Todas las categorías</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span class="sr-only">Filtrar visibilidad</span>
+                        <select id="admin-visibility">
+                            <option value="">Todos los modelos</option>
+                            <option value="published">Publicados</option>
+                            <option value="hidden">Ocultos</option>
+                            <option value="empty">Sin stock</option>
+                        </select>
+                    </label>
+                    <button id="categories-button" class="secondary">＋ Categoría</button>
+                    <button id="refresh" class="text-button">Actualizar</button>
+                </div>
+                <p id="result-count" class="muted"></p>
+                <div class="table-wrap">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>Modelo</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Estado</th>
+                                <th><span class="sr-only">Acciones</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="product-list"></tbody>
+                    </table>
+                </div>
+                <p id="empty-list" hidden>No hay modelos con esos filtros.</p>
+            </section>
+            <section id="orders-panel" hidden>
+                <div class="history-head">
+                    <h2>Pedidos</h2>
+                    <p>
+                        Los pagos con tarjeta y Mercado Pago se confirman solos. Las
+                        transferencias las confirmás vos cuando ves la plata en tu cuenta: ahí
+                        se descuenta el stock.
+                    </p>
+                </div>
+                <div id="order-list"></div>
+            </section>
+            <section id="history-panel" hidden>
+                <div class="history-head">
+                    <h2>Últimos movimientos</h2>
+                    <p>Ingresos, ventas, ajustes y cambios guardados en los modelos.</p>
+                </div>
+                <div id="event-list"></div>
+            </section>
+            <section id="trash-panel" hidden>
+                <div class="history-head">
+                    <h2>Productos eliminados</h2>
+                    <p>
+                        Restaurá un producto con sus fotos, talles, cantidades e historial. Se
+                        recupera como oculto para que lo revises antes de publicarlo.
+                    </p>
+                </div>
+                <div class="table-wrap">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>Modelo</th>
+                                <th>Categoría</th>
+                                <th>Fecha de eliminación</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trash-list"></tbody>
+                    </table>
+                </div>
+                <p id="empty-trash" class="muted">La Papelera está vacía.</p>
+            </section>
+        </main>
+
+        <!-- Formularios para crear y editar modelos, fotos y variantes -->
+        <dialog id="editor">
+            <form id="product-form">
+                <header class="dialog-header">
+                    <div>
+                        <p class="eyebrow">CATÁLOGO</p>
+                        <h2 id="editor-title">Nuevo modelo</h2>
+                    </div>
+                    <button
+                        type="button"
+                        class="close"
+                        data-close="editor"
+                        aria-label="Cerrar edición"
+                    >
+                        ×
+                    </button>
+                </header>
+                <div class="dialog-body">
+                    <p id="editor-error" class="error" role="alert" hidden></p>
+                    <div class="editor-columns">
+                        <section>
+                            <h3>Datos del modelo</h3>
+                            <label>
+                                Nombre
+                                <input
+                                    id="product-name"
+                                    required
+                                    minlength="2"
+                                    maxlength="120"
+                                    placeholder="Ej. Jordan Royal Toe"
+                                />
+                            </label>
+                            <div class="field-row">
+                                <label>
+                                    Categoría
+                                    <select id="product-category" required></select>
+                                </label>
+                                <button type="button" id="inline-category" class="secondary small">
+                                    ＋ Nueva
+                                </button>
+                            </div>
+                            <label>
+                                Precio en pesos
+                                <input
+                                    id="product-price"
+                                    type="number"
+                                    min="0.01"
+                                    step="0.01"
+                                    required
+                                    placeholder="Ej. 74900"
+                                />
+                            </label>
+                            <label>
+                                Descripción
+                                <textarea
+                                    id="product-description"
+                                    rows="7"
+                                    maxlength="8000"
+                                    placeholder="Características, calidad y medidas de este modelo"
+                                ></textarea>
+                            </label>
+                            <label class="checkbox">
+                                <input id="product-published" type="checkbox" checked />
+                                Visible en la tienda
+                            </label>
+                            <p class="hint">
+                                Podés ocultarlo sin perder sus datos ni el historial.
+                            </p>
+                        </section>
+                        <section>
+                            <h3>Fotos del modelo</h3>
+                            <p class="hint">
+                                La primera foto se usa como principal. JPG, PNG o WebP, hasta 8 MB
+                                por foto. Máximo 10 fotos. Si el modelo tiene colores, marcá de qué
+                                color es cada foto: en la tienda, al elegir un color se ven sus
+                                fotos.
+                            </p>
+                            <label class="upload-box" for="photo-files">
+                                ＋ Elegir fotos
+                                <input
+                                    id="photo-files"
+                                    type="file"
+                                    accept="image/jpeg,image/png,image/webp"
+                                    multiple
+                                />
+                            </label>
+                            <div id="photos" class="photos"></div>
+                            <p id="upload-progress" class="hint" role="status"></p>
+                        </section>
+                    </div>
+                    <section class="variants-section">
+                        <div class="section-title">
+                            <div>
+                                <h3>Talles, colores y cantidades</h3>
+                                <p class="hint">
+                                    Cada fila representa una combinación. Si el precio queda vacío,
+                                    usa el precio del modelo. Para un modelo con varios colores,
+                                    escribí el color y tocá «Talles 35 al 44» una vez por color.
+                                </p>
+                            </div>
+                            <div class="range-tools">
+                                <input
+                                    id="range-color"
+                                    type="text"
+                                    maxlength="40"
+                                    placeholder="Color (opcional)"
+                                    aria-label="Color para los talles 35 al 44"
+                                />
+                                <button type="button" id="add-range" class="text-button">
+                                    Talles 35 al 44
+                                </button>
+                                <button type="button" id="add-variant" class="secondary small">
+                                    ＋ Combinación
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table class="variants-table">
+                                <thead>
+                                    <tr>
+                                        <th>Talle</th>
+                                        <th>Color opcional</th>
+                                        <th>Pares disponibles</th>
+                                        <th>Precio opcional</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="variant-rows"></tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+                <footer class="dialog-footer">
+                    <button type="button" class="secondary" data-close="editor">Cancelar</button>
+                    <button id="save-product" class="primary" type="submit">Guardar modelo</button>
+                </footer>
+            </form>
+        </dialog>
+
+        <!-- Movimientos de stock -->
+        <dialog id="movement">
+            <form id="movement-form">
+                <header class="dialog-header">
+                    <div>
+                        <p class="eyebrow">INVENTARIO</p>
+                        <h2>Registrar movimiento</h2>
+                        <p id="movement-product" class="muted"></p>
+                    </div>
+                    <button
+                        type="button"
+                        class="close"
+                        data-close="movement"
+                        aria-label="Cerrar movimiento"
+                    >
+                        ×
+                    </button>
+                </header>
+                <div class="dialog-body">
+                    <p id="movement-error" class="error" role="alert" hidden></p>
+                    <label>
+                        Talle y color
+                        <select id="movement-variant" required></select>
+                    </label>
+                    <label>
+                        Qué querés registrar
+                        <select id="movement-kind">
+                            <option value="received">Ingreso de mercadería</option>
+                            <option value="sale">Venta confirmada</option>
+                            <option value="adjust">Corregir cantidad total</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span id="quantity-label">Cantidad de pares que ingresan</span>
+                        <input
+                            id="movement-quantity"
+                            type="number"
+                            step="1"
+                            min="1"
+                            required
+                            value="1"
+                        />
+                    </label>
+                    <div id="stock-preview" class="stock-preview" role="status"></div>
+                    <label>
+                        <span id="reason-label">Referencia opcional</span>
+                        <input
+                            id="movement-reason"
+                            maxlength="240"
+                            placeholder="Ej. Reposición o referencia de la venta"
+                        />
+                    </label>
+                    <p class="hint">
+                        Una venta confirmada descuenta pares. Corregir cantidad total reemplaza el
+                        stock por la cantidad que indiques.
+                    </p>
+                </div>
+                <footer class="dialog-footer">
+                    <button type="button" class="secondary" data-close="movement">Cancelar</button>
+                    <button id="save-movement" class="primary" type="submit">
+                        Guardar movimiento
+                    </button>
+                </footer>
+            </form>
+        </dialog>
+
+        <dialog id="category-dialog">
+            <form id="category-form">
+                <header class="dialog-header">
+                    <h2>Nueva categoría</h2>
+                    <button
+                        type="button"
+                        class="close"
+                        data-close="category-dialog"
+                        aria-label="Cerrar categoría"
+                    >
+                        ×
+                    </button>
+                </header>
+                <div class="dialog-body">
+                    <p id="category-error" class="error" role="alert" hidden></p>
+                    <label>
+                        Nombre de la categoría
+                        <input
+                            id="category-name"
+                            required
+                            minlength="2"
+                            maxlength="70"
+                            placeholder="Ej. Running"
+                        />
+                    </label>
+                </div>
+                <footer class="dialog-footer">
+                    <button type="button" class="secondary" data-close="category-dialog">
+                        Cancelar
+                    </button>
+                    <button class="primary" type="submit">Crear categoría</button>
+                </footer>
+            </form>
+        </dialog>
+        <!-- Confirmación de eliminación recuperable -->
+        <dialog id="delete-dialog">
+            <form id="delete-form">
+                <header class="dialog-header">
+                    <div>
+                        <p class="eyebrow">CATÁLOGO</p>
+                        <h2>Eliminar producto</h2>
+                    </div>
+                    <button
+                        type="button"
+                        class="close"
+                        data-close="delete-dialog"
+                        aria-label="Cerrar eliminación"
+                    >
+                        ×
+                    </button>
+                </header>
+                <div class="dialog-body">
+                    <p id="delete-error" class="error" role="alert" hidden></p>
+                    <p>
+                        Vas a eliminar
+                        <strong id="delete-product-name"></strong>
+                        .
+                    </p>
+                    <p>
+                        Se quitará de la tienda y de la lista de productos. Podés recuperarlo desde
+                        <strong>Papelera</strong>
+                        con sus fotos, talles, stock e historial.
+                    </p>
+                </div>
+                <footer class="dialog-footer">
+                    <button type="button" class="secondary" data-close="delete-dialog">
+                        Cancelar
+                    </button>
+                    <button id="confirm-delete" class="primary danger-fill" type="submit">
+                        Eliminar producto
+                    </button>
+                </footer>
+            </form>
+        </dialog>
+        <script src="/JS/administrador.js?v=pedidos-1" defer></script>
+    </body>
+</html>

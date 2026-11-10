@@ -1,0 +1,1413 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+/* Identidad visual de Pisada: tema oscuro con acento lima.
+   Este módulo se carga último y adapta los componentes de la tienda. */
+
+.pisada-tema {
+    --bg: #{v.$fondo};
+    --surface: #{v.$superficie};
+    --surface-2: #{v.$superficie-2};
+    --line: #{v.$borde};
+    --ink: #{v.$texto};
+    --muted: #{v.$gris-texto};
+    --paper: #{v.$superficie};
+    --accent: #{v.$acento};
+    --accent-ink: #{v.$tinta-acento};
+    --radius: 18px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: v.$fuente-texto;
+    -webkit-font-smoothing: antialiased;
+
+    ::selection {
+        background: var(--accent);
+        color: var(--accent-ink);
+    }
+    a {
+        color: inherit;
+    }
+    a:hover {
+        color: var(--accent);
+    }
+    h1,
+    h2,
+    h3 {
+        font-family: v.$fuente-titulos;
+        letter-spacing: -0.03em;
+        color: var(--ink);
+    }
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    summary:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+    }
+}
+
+/* ---------- Encabezado ---------- */
+.pisada-tema .header-announcement {
+    background: var(--accent) !important;
+    height: 34px;
+}
+.pisada-tema .header-announcement__text {
+    color: var(--accent-ink) !important;
+    font-family: v.$fuente-titulos;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+}
+.pisada-tema .header-menu {
+    background: rgba(13, 13, 15, 0.86) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+}
+.pisada-tema .header-menu__desktop,
+.pisada-tema .header-menu__desktop-list {
+    min-height: 74px;
+}
+.pisada-tema .header-menu svg circle,
+.pisada-tema .header-menu svg path,
+.pisada-tema .header-menu svg polygon {
+    stroke: var(--ink);
+}
+.pisada-tema .header-menu svg rect {
+    fill: var(--ink);
+}
+.pisada-tema .desktop-list__link,
+.pisada-tema .desktop-list__item > a {
+    color: var(--ink) !important;
+    font-family: v.$fuente-titulos;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.pisada-tema .desktop-list__link:hover {
+    color: var(--accent) !important;
+}
+.pisada-tema .cart-qty {
+    background: var(--accent) !important;
+    color: var(--accent-ink) !important;
+    font-weight: 700;
+}
+.pisada-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+    text-decoration: none;
+}
+.pisada-logo__mark {
+    width: 34px;
+    height: 34px;
+    flex: none;
+}
+.pisada-logo__text {
+    font-family: v.$fuente-titulos !important;
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    line-height: 1;
+}
+.pisada-tema .header-logo__link:hover .pisada-logo__text {
+    color: var(--accent);
+}
+.pisada-tema .uk-navbar-dropdown,
+.pisada-tema .uk-dropdown {
+    background: var(--surface) !important;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    color: var(--ink);
+}
+.pisada-tema .uk-navbar-dropdown hr {
+    border-top-color: var(--line);
+}
+.pisada-tema .desktop-list__title,
+.pisada-tema .desktop-list__text,
+.pisada-tema .desktop-list-link__text {
+    color: var(--ink) !important;
+}
+.pisada-tema .desktop-list-link__text:hover {
+    color: var(--accent) !important;
+}
+.pisada-tema .header-search__input,
+.pisada-tema .uk-search-input {
+    color: var(--ink) !important;
+    background: transparent !important;
+    font-size: 18px !important;
+    &::placeholder {
+        color: var(--muted);
+    }
+}
+.pisada-tema .uk-navbar-toggle,
+.pisada-tema .uk-close {
+    color: var(--ink) !important;
+}
+
+/* ---------- Paneles laterales y ventanas ---------- */
+.pisada-tema .uk-offcanvas-bar {
+    background: var(--surface) !important;
+    color: var(--ink);
+}
+.pisada-tema .mobile-menu-sidenav__item-link {
+    color: var(--ink) !important;
+    font-family: v.$fuente-titulos;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.pisada-tema .mobile-menu-sidenav__list-item--divider {
+    border-top: 1px solid var(--line);
+}
+.pisada-tema .uk-modal-dialog {
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+.pisada-tema .uk-modal-header,
+.pisada-tema .uk-modal-footer {
+    background: transparent;
+    border-color: var(--line);
+}
+.pisada-tema .field__input,
+.pisada-tema .field__textarea,
+.pisada-tema .field__select {
+    background: var(--surface-2) !important;
+    border: 1px solid var(--line) !important;
+    color: var(--ink) !important;
+}
+.pisada-tema .field__label {
+    color: var(--muted);
+}
+.pisada-tema .button,
+.pisada-tema .uk-button {
+    font-family: v.$fuente-titulos;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+.pisada-tema .button.background--primary:hover {
+    filter: brightness(1.08);
+}
+.pisada-tema .replica-cart-line {
+    border-bottom-color: var(--line);
+    & img {
+        border-radius: 12px;
+    }
+    & button {
+        color: var(--ink);
+    }
+}
+.pisada-tema .replica-feedback,
+.pisada-tema .replica-cart-empty {
+    color: var(--muted);
+}
+.pisada-tema .replica-checkout .summary-row {
+    border-bottom-color: var(--line);
+}
+
+/* ---------- Botones y textos comunes ---------- */
+.pisada-eyebrow {
+    font-family: v.$fuente-titulos !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.18em;
+    color: var(--accent) !important;
+    margin: 0 0 14px !important;
+}
+.pisada-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 0 26px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-ink) !important;
+    border: 2px solid var(--accent);
+    font-family: v.$fuente-titulos;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(198, 255, 61, 0.25);
+        color: var(--accent-ink) !important;
+    }
+}
+.pisada-button--ghost {
+    background: transparent;
+    color: var(--ink) !important;
+    border-color: var(--line);
+    &:hover {
+        border-color: var(--accent);
+        color: var(--accent) !important;
+        box-shadow: none;
+    }
+}
+.pisada-button--dark {
+    background: var(--accent-ink);
+    border-color: var(--accent-ink);
+    color: var(--accent) !important;
+    &:hover {
+        color: var(--accent) !important;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+}
+.pisada-text-link {
+    font-family: v.$fuente-titulos;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 3px;
+    white-space: nowrap;
+    &:hover {
+        color: var(--ink) !important;
+        border-color: var(--ink);
+    }
+}
+.pisada-tema .section-heading h2 {
+    font-size: clamp(28px, 3.4vw, 44px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+/* ---------- Portada ---------- */
+.pisada-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(60% 80% at 85% 30%, rgba(198, 255, 61, 0.14), transparent 70%),
+        var(--bg);
+    border-bottom: 1px solid var(--line);
+}
+// Los contenedores de UIkit agregan pseudo-elementos que ocuparían celdas de la grilla.
+.pisada-hero__inner,
+.pisada-benefits,
+.pisada-tema .help-inner {
+    &::before,
+    &::after {
+        display: none !important;
+    }
+}
+.pisada-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 40px;
+    min-height: 600px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+.pisada-hero__copy h1 {
+    font-size: clamp(64px, 9vw, 132px);
+    font-weight: 900;
+    line-height: 0.86;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    margin: 0 0 26px;
+    & em {
+        display: block;
+        font-style: normal;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--accent);
+    }
+}
+.pisada-hero__lead {
+    font-size: 17px !important;
+    line-height: 1.7;
+    color: var(--muted) !important;
+    max-width: 440px;
+    margin: 0 0 32px !important;
+}
+.pisada-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+.pisada-hero__stats {
+    display: flex;
+    gap: 40px;
+    margin: 44px 0 0;
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+    max-width: 440px;
+    & dt {
+        font-family: v.$fuente-titulos;
+        font-size: 30px;
+        font-weight: 900;
+        color: var(--ink);
+        line-height: 1;
+    }
+    & dd {
+        margin: 6px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+    }
+}
+.pisada-hero__visual {
+    position: relative;
+    height: 520px;
+}
+.pisada-hero__ring {
+    position: absolute;
+    inset: 6% 4% 4% 10%;
+    border-radius: 50%;
+    border: 2px dashed rgba(198, 255, 61, 0.35);
+    animation: pisada-giro 40s linear infinite;
+}
+.pisada-hero__main {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 76%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    transform: rotate(3deg);
+}
+.pisada-hero__side {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 44%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 6px solid var(--bg);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: rotate(-6deg);
+}
+.pisada-hero__tag {
+    position: absolute;
+    right: 6%;
+    bottom: 6%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: var(--accent);
+    color: var(--accent-ink) !important;
+    text-decoration: none !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    & small {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+    }
+    & strong {
+        font-family: v.$fuente-titulos;
+        font-size: 22px;
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+    & span {
+        font-size: 13px;
+        font-weight: 600;
+    }
+    &:hover {
+        color: var(--accent-ink) !important;
+        transform: translateY(-2px);
+    }
+}
+@keyframes pisada-giro {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------- Banda animada ---------- */
+// La banda inclinada no debe generar desplazamiento horizontal.
+.pisada-tema #contenido-principal {
+    overflow-x: clip;
+}
+.pisada-marquee {
+    overflow: hidden;
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 14px 0;
+    transform: rotate(-1.2deg);
+    margin: 26px -10px 10px;
+}
+.pisada-marquee__track {
+    display: flex;
+    gap: 28px;
+    width: max-content;
+    animation: pisada-banda 28s linear infinite;
+    font-family: v.$fuente-titulos;
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+    & span,
+    & b {
+        color: var(--accent-ink) !important;
+        font-family: v.$fuente-titulos;
+    }
+    & b {
+        font-weight: 400;
+    }
+}
+@keyframes pisada-banda {
+    to {
+        transform: translateX(-50%);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pisada-marquee__track,
+    .pisada-hero__ring {
+        animation: none;
+    }
+}
+
+/* ---------- Categorías ---------- */
+.pisada-categories {
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+.pisada-cats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 230px;
+    gap: 16px;
+}
+.pisada-cat {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--surface);
+    text-decoration: none !important;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:
+            transform 0.5s,
+            filter 0.3s;
+        filter: saturate(0.9) brightness(0.85);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 55%);
+    }
+    & > span {
+        position: absolute;
+        z-index: 1;
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+        display: flex;
+        flex-direction: column;
+    }
+    & strong {
+        font-family: v.$fuente-titulos;
+        font-size: 26px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #fff;
+        line-height: 1;
+    }
+    & small {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-top: 6px;
+    }
+    &:hover img {
+        transform: scale(1.07);
+        filter: saturate(1.1) brightness(1);
+    }
+    &:hover strong {
+        color: var(--accent);
+    }
+}
+.pisada-cat--big {
+    grid-column: span 2;
+    grid-row: span 2;
+    & strong {
+        font-size: 44px;
+    }
+}
+.pisada-cat--wide {
+    grid-column: 1 / -1;
+    & img {
+        object-position: center 60%;
+    }
+}
+
+/* ---------- Tarjetas de producto ---------- */
+.pisada-tema .block-products-feed {
+    background: transparent !important;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+.pisada-tema .block-products-feed__product-wrapper,
+.pisada-tema .products-feed__product-wrapper {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px 10px 16px;
+    height: 100%;
+    box-sizing: border-box;
+    transition:
+        border-color 0.25s,
+        transform 0.25s;
+    &:hover {
+        border-color: var(--accent);
+        transform: translateY(-4px);
+    }
+}
+.pisada-tema .product-preview-carrousel__item {
+    background: var(--surface-2);
+    border-radius: 12px;
+}
+.pisada-tema .products-feed__product-image,
+.pisada-tema .block-products-feed__product-image {
+    object-position: center !important;
+    transform: none !important;
+    border-radius: 12px;
+}
+.pisada-tema .products-feed__product-info,
+.pisada-tema .block-products-feed__product-info {
+    padding: 0 6px;
+}
+.pisada-tema .products-feed__product-name,
+.pisada-tema .block-products-feed__product-name {
+    font-family: v.$fuente-titulos;
+    font-size: 15px !important;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    margin-top: 14px !important;
+    & a {
+        color: var(--ink) !important;
+        text-decoration: none;
+    }
+    & a:hover {
+        color: var(--accent) !important;
+    }
+}
+.pisada-tema .products-feed__product-price,
+.pisada-tema .block-products-feed__product-price {
+    font-family: v.$fuente-titulos;
+    font-size: 18px !important;
+    font-weight: 800;
+    color: var(--accent) !important;
+}
+.pisada-tema .products-feed__product-additional,
+.pisada-tema .block-products-feed__product-additional {
+    font-size: 11px !important;
+    color: var(--muted) !important;
+}
+.pisada-tema .products-feed__product-buttons,
+.pisada-tema .block-products-feed__product-buttons {
+    padding: 0 6px;
+}
+.pisada-tema .btn-buy {
+    border-radius: 999px;
+    font-family: v.$fuente-titulos;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.pisada-tema .product-preview-carrousel__nav {
+    color: var(--ink);
+}
+.pisada-tema .product-preview-carrousel__dotnav button {
+    background: rgba(255, 255, 255, 0.35);
+}
+.pisada-tema .product-preview-carrousel__dotnav .is-active button {
+    background: var(--accent);
+}
+
+/* ---------- Promo y beneficios ---------- */
+.pisada-promo {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.pisada-promo__box {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    background: var(--accent);
+    border-radius: 28px;
+    padding: 50px;
+    overflow: hidden;
+    & .pisada-eyebrow {
+        color: var(--accent-ink) !important;
+        opacity: 0.7;
+    }
+    & h2 {
+        font-size: clamp(30px, 3.6vw, 50px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 0.98;
+        color: var(--accent-ink) !important;
+        margin: 0 0 18px;
+    }
+    & p:not(.pisada-eyebrow) {
+        font-size: 15px;
+        color: rgba(13, 13, 15, 0.75) !important;
+        max-width: 420px;
+        margin: 0 0 26px;
+    }
+}
+.pisada-promo__images {
+    position: relative;
+    height: 300px;
+    & img {
+        position: absolute;
+        width: 60%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 22px;
+        border: 5px solid var(--accent-ink);
+    }
+    & img:first-child {
+        left: 0;
+        top: 0;
+        transform: rotate(-5deg);
+    }
+    & img:last-child {
+        right: 0;
+        bottom: 0;
+        transform: rotate(6deg);
+    }
+}
+.pisada-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    & > div {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 22px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+    }
+    & i {
+        width: 48px;
+        height: 48px;
+        flex: none;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        background: rgba(198, 255, 61, 0.12);
+        color: var(--accent);
+        font-size: 19px;
+    }
+    & span {
+        font-family: v.$fuente-titulos;
+        font-weight: 800;
+        font-size: 15px;
+        color: var(--ink);
+    }
+    & small {
+        display: block;
+        font-family: v.$fuente-texto;
+        font-weight: 400;
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 4px;
+    }
+}
+
+/* ---------- Preguntas frecuentes ---------- */
+.pisada-tema .pisada-help {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 80px 0;
+}
+.pisada-tema .help-inner h2 {
+    font-size: clamp(30px, 3.4vw, 46px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.pisada-tema .help-inner > div > p:not(.pisada-eyebrow) {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 26px;
+}
+.pisada-tema .pisada-faq details {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 10px;
+    background: var(--bg);
+    &:first-child {
+        padding-top: 18px;
+    }
+    &[open] {
+        border-color: var(--accent);
+    }
+}
+.pisada-tema .pisada-faq summary {
+    font-family: v.$fuente-titulos;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    &::-webkit-details-marker {
+        display: none;
+    }
+    &::after {
+        content: "+";
+        color: var(--accent);
+        font-size: 22px;
+        line-height: 1;
+    }
+}
+.pisada-tema .pisada-faq details[open] summary::after {
+    content: "–";
+}
+.pisada-tema .pisada-faq p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ---------- Catálogo ---------- */
+.pisada-tema .browse-title {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.95;
+}
+.pisada-tema .browse-count,
+.pisada-tema .sort-label {
+    color: var(--muted);
+}
+.pisada-tema .sort-label select,
+.pisada-tema .filter-body select {
+    background: var(--surface-2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+}
+.pisada-tema .pisada-filters details {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+.pisada-tema .pisada-filters summary {
+    font-family: v.$fuente-titulos;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.pisada-tema .filter-body > label:not(.stock-label),
+.pisada-tema .filter-body legend {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.pisada-tema .size-filter {
+    background: var(--surface-2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-weight: 600;
+    &:hover {
+        border-color: var(--accent);
+    }
+}
+.pisada-tema .size-filter[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+}
+.pisada-tema .stock-label input {
+    accent-color: v.$acento;
+}
+.pisada-tema .clear-filters {
+    color: var(--accent);
+}
+.pisada-tema .pisada-product-grid {
+    gap: 22px 18px;
+}
+.pisada-tema .replica-result-empty {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+/* ---------- Ficha de producto ---------- */
+.pisada-tema .breadcrumb__link {
+    color: var(--muted) !important;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.pisada-tema .product-vip__carrousel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    overflow: hidden;
+}
+.pisada-tema .product-vip__carrousel-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+.pisada-tema .product-vip__title {
+    font-size: clamp(34px, 4vw, 52px) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    line-height: 0.95;
+}
+.pisada-tema .product-vip__price {
+    font-family: v.$fuente-titulos;
+    font-size: 30px !important;
+    font-weight: 800;
+    color: var(--accent) !important;
+    & span {
+        font-family: v.$fuente-titulos;
+        color: var(--accent);
+    }
+}
+.pisada-tema .product-quality {
+    display: inline-block;
+    font-size: 12px !important;
+    color: var(--ink) !important;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-top: -6px !important;
+}
+.pisada-tema .product-vip__attribute-name,
+.pisada-tema .product-vip__quantity-name,
+.pisada-tema .product-vip__shipment-cost-title {
+    font-family: v.$fuente-titulos;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    color: var(--muted) !important;
+}
+.pisada-tema .product-vip__attribute-item-default {
+    background: var(--surface-2) !important;
+    border: 1px solid var(--line) !important;
+    color: var(--ink) !important;
+    border-radius: 10px !important;
+    min-width: 46px;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+.pisada-tema .product-vip__attribute-item--selected {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: var(--accent-ink) !important;
+}
+.pisada-tema .product-vip__attribute-item--not-available {
+    opacity: 0.35;
+    text-decoration: line-through !important;
+}
+.pisada-tema .product-vip__quantity-button,
+.pisada-tema .product-vip__quantity-value {
+    background: var(--surface-2) !important;
+    border: 1px solid var(--line) !important;
+    color: var(--ink) !important;
+}
+.pisada-tema #add_to_cart-btn {
+    min-height: 56px;
+    font-size: 15px;
+}
+.pisada-tema .pisada-guide-link,
+.pisada-tema .product-help a {
+    color: var(--accent) !important;
+}
+.pisada-tema .product-help {
+    color: var(--muted);
+}
+.pisada-tema .pisada-size-guide {
+    border-top-color: var(--line);
+    & h2 {
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    & p {
+        color: var(--muted);
+    }
+    & table {
+        background: var(--surface);
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+    & thead {
+        background: var(--surface-2);
+    }
+    & td,
+    & th {
+        border-bottom-color: var(--line);
+        color: var(--ink);
+    }
+    & td a {
+        color: var(--accent);
+    }
+}
+.pisada-tema .original-details {
+    border-top-color: var(--line);
+    color: var(--muted);
+    & summary {
+        color: var(--ink);
+        font-family: v.$fuente-titulos;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+    }
+}
+
+/* ---------- Pie de página ---------- */
+.pisada-tema .footer__top {
+    background: var(--bg) !important;
+    border-top: 1px solid var(--line);
+}
+.pisada-tema .footer__bottom {
+    background: var(--bg) !important;
+    border-top: 1px solid var(--line);
+}
+.pisada-tema .footer__top__title {
+    font-family: v.$fuente-titulos;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink) !important;
+}
+.pisada-tema .footer__top__icon {
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+}
+.pisada-tema .footer__top__social-media-link,
+.pisada-tema .footer__top__info-link,
+.pisada-tema .footer__top__info-item a {
+    color: var(--muted) !important;
+    &:hover {
+        color: var(--accent) !important;
+    }
+}
+.pisada-tema .footer__top__social-media-icon {
+    color: var(--ink);
+}
+.pisada-tema .footer__bottom__copyright-text,
+.pisada-tema .admin-footer-link {
+    color: var(--muted) !important;
+}
+.pisada-tema .chat__bubble--whatsapp {
+    background: var(--accent) !important;
+    box-shadow: 0 12px 30px rgba(198, 255, 61, 0.3);
+}
+.pisada-tema .chat__icon {
+    color: var(--accent-ink) !important;
+}
+
+/* ---------- Checkout ---------- */
+.pisada-checkout-modal .uk-modal-dialog {
+    width: min(1000px, 100%);
+}
+.pisada-checkout-modal .modal__title {
+    font-family: v.$fuente-titulos;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+.pisada-checkout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 26px;
+    align-items: start;
+    & fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0 0 24px;
+        min-width: 0;
+    }
+    & legend {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: v.$fuente-titulos;
+        font-weight: 800;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--ink);
+        margin-bottom: 14px;
+        & b {
+            display: grid;
+            place-items: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--accent-ink);
+            font-size: 13px;
+        }
+    }
+}
+.pisada-checkout__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+.pisada-checkout__grid--3 {
+    grid-template-columns: 2fr 1.4fr 1fr;
+}
+.pisada-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    & span {
+        font-size: 12px;
+        color: var(--muted);
+    }
+    & input {
+        height: 46px;
+        padding: 0 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: var(--bg);
+        color: var(--ink);
+        font: inherit;
+        font-size: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        &:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+        &::placeholder {
+            color: #5d5d66;
+        }
+    }
+}
+.pisada-options {
+    display: grid;
+    gap: 10px;
+}
+.pisada-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    cursor: pointer;
+    transition: border-color 0.2s;
+    & input {
+        accent-color: v.$acento;
+        width: 18px;
+        height: 18px;
+        flex: none;
+        margin: 0;
+        position: static !important;
+        opacity: 1 !important;
+        appearance: auto;
+    }
+    // El tema original dibuja su propio radio sobre el span; acá no se usa.
+    & > span {
+        height: auto !important;
+        padding: 0 !important;
+        line-height: 1.3;
+        &::before,
+        &::after {
+            display: none !important;
+        }
+    }
+    & strong {
+        display: block;
+        font-family: v.$fuente-titulos;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--ink);
+    }
+    & small {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 3px;
+    }
+    &:hover {
+        border-color: #4a4a55;
+    }
+    &.is-checked {
+        border-color: var(--accent);
+        background: rgba(198, 255, 61, 0.06);
+    }
+    &.is-disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+.pisada-checkout__summary {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    & ul {
+        list-style: none;
+        margin: 0 0 12px;
+        padding: 0;
+    }
+    & li {
+        display: grid;
+        grid-template-columns: 52px 1fr auto;
+        gap: 12px;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--ink);
+    }
+    & li img {
+        width: 52px;
+        height: 52px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    & li small {
+        display: block;
+        font-weight: 400;
+        color: var(--muted);
+        margin-top: 3px;
+    }
+    & .summary-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border: 0;
+        font-size: 14px;
+        color: var(--muted);
+    }
+    & .summary-row span:last-child {
+        white-space: nowrap;
+        padding-left: 12px;
+    }
+    & .summary-row.is-discount span:last-child {
+        color: var(--accent);
+    }
+    & .summary-row.is-total {
+        border-top: 1px solid var(--line);
+        margin-top: 6px;
+        padding-top: 14px;
+        font-family: v.$fuente-titulos;
+        font-weight: 900;
+        font-size: 22px;
+        color: var(--ink);
+    }
+}
+.pisada-checkout__title {
+    font-family: v.$fuente-titulos;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 6px;
+}
+.pisada-checkout__cuotas {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 6px;
+    text-align: right;
+    & b {
+        color: var(--accent);
+    }
+}
+.pisada-checkout__error {
+    color: #ff8a7e;
+    font-size: 13px;
+    min-height: 18px;
+    margin: 8px 0;
+}
+.pisada-checkout__submit {
+    width: 100%;
+}
+.pisada-checkout__note {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 12px 0 0;
+    text-align: center;
+}
+.pisada-checkout__done {
+    text-align: center;
+    padding: 20px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    & h2 {
+        font-weight: 900;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    & p {
+        color: var(--muted);
+        max-width: 440px;
+        margin: 0 0 6px;
+    }
+}
+.pisada-checkout__check {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-size: 36px;
+    font-weight: 900;
+}
+
+/* ---------- Pantallas medianas y chicas ---------- */
+@include m.hasta(959px) {
+    .pisada-hero__inner {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        gap: 30px;
+    }
+    .pisada-hero__visual {
+        height: 420px;
+        max-width: 520px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .pisada-cats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 190px;
+    }
+    .pisada-promo__box {
+        grid-template-columns: 1fr;
+        padding: 36px;
+    }
+    .pisada-benefits {
+        grid-template-columns: 1fr;
+    }
+    .pisada-checkout {
+        grid-template-columns: 1fr;
+    }
+    .pisada-checkout__summary {
+        position: static;
+    }
+}
+@include m.hasta(639px) {
+    .pisada-checkout__grid,
+    .pisada-checkout__grid--3 {
+        grid-template-columns: 1fr;
+    }
+}
+@include m.hasta(639px) {
+    .pisada-logo__text {
+        font-size: 20px;
+    }
+    .pisada-logo__mark {
+        width: 28px;
+        height: 28px;
+    }
+    .pisada-tema .header-announcement__text {
+        font-size: 8px;
+        letter-spacing: 0.06em;
+    }
+    .pisada-hero__copy h1 {
+        font-size: 68px;
+    }
+    .pisada-hero__lead {
+        font-size: 15px !important;
+    }
+    .pisada-hero__stats {
+        gap: 24px;
+        & dt {
+            font-size: 24px;
+        }
+    }
+    .pisada-hero__visual {
+        height: 330px;
+    }
+    .pisada-hero__tag {
+        padding: 12px 14px;
+        & strong {
+            font-size: 18px;
+        }
+    }
+    .pisada-marquee__track {
+        font-size: 18px;
+    }
+    .pisada-categories {
+        padding-top: 44px;
+    }
+    .pisada-cats {
+        grid-auto-rows: 150px;
+        gap: 10px;
+    }
+    .pisada-cat--big {
+        grid-column: span 2;
+        grid-row: span 1;
+        & strong {
+            font-size: 32px;
+        }
+    }
+    .pisada-cat strong {
+        font-size: 20px;
+    }
+    .pisada-cat small {
+        display: none;
+    }
+    .pisada-promo__box {
+        padding: 28px 22px;
+        border-radius: 22px;
+    }
+    .pisada-promo__images {
+        height: 220px;
+    }
+    .pisada-tema .pisada-help {
+        padding: 50px 0;
+    }
+    .pisada-tema .block-products-feed__product-wrapper,
+    .pisada-tema .products-feed__product-wrapper {
+        padding: 6px 6px 12px;
+    }
+    .pisada-tema .products-feed__product-name,
+    .pisada-tema .block-products-feed__product-name {
+        font-size: 13px !important;
+    }
+    .pisada-tema .products-feed__product-price,
+    .pisada-tema .block-products-feed__product-price {
+        font-size: 15px !important;
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "explorer.compactFolders": false,
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.next": true,
+        "**/.vinext": true,
+        "**/.wrangler": true,
+        "**/.sites-runtime": true,
+        "**/dist": true
+    },
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/CSS"
+        }
+    ],
+    "liveSassCompile.settings.excludeList": [
+        "**/node_modules/**",
+        "**/SERVIDOR/**",
+        "**/_*.scss"
+    ]
+}

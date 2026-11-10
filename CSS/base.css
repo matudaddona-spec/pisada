@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/* Tipografía y colores base de Pisada. */
+.uk-h1,
+.uk-h2,
+.uk-h3,
+.uk-h4,
+.uk-h5,
+.uk-h6,
+.uk-heading-2xlarge,
+.uk-heading-large,
+.uk-heading-medium,
+.uk-heading-small,
+.uk-heading-xlarge,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Archivo", "Arial Black", sans-serif;
+}
+
+html,
+body,
+p,
+span,
+.uk-button,
+.field__label,
+.field__input,
+.field__textarea,
+.field__select {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+html,
+body {
+  background: #0d0d0f;
+}
+
+.background--primary,
+.background--primary-hover:hover {
+  background-color: #c6ff3d;
+}
+
+.text--primary,
+.text--primary-hover:hover,
+body {
+  color: #f2f2ee !important;
+}
+
+.contrast_text--primary,
+.contrast_text--primary-hover:hover {
+  color: #0d0d0f;
+}
+
+.checkbox__check:checked::before {
+  border: solid #c6ff3d;
+}
+
+.checkbox__check:checked,
+.checkbox__check:checked:focus {
+  border: 1px solid #c6ff3d;
+}
+
+.checkbox__check:checked + .checkout__label-text {
+  color: #c6ff3d;
+}
+
+.border--primary {
+  border: solid #c6ff3d;
+}
+
+.desktop-list__hover,
+.uk-section-block__title > span {
+  background-image: none;
+}
+
+.products-feed__categories-list::-webkit-scrollbar-thumb,
+.uk-navbar-dropdown > .desktop-list__menu::-webkit-scrollbar-thumb {
+  background: #c6ff3d;
+}
+
+.border-radius {
+  border-radius: 999px;
+}
+
+.border-radius-2x {
+  border-radius: 999px;
+}
+
+.field__input.border-radius,
+.field__select.border-radius,
+.field__textarea.border-radius {
+  border-radius: 12px;
+}
+
+.field__input.border-radius--plain,
+.field__select.border-radius--plain,
+.field__textarea.border-radius--plain {
+  border-radius: 12px;
+}
+
+.field__input.border-radius.field__input--right-button {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}

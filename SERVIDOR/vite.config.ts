@@ -1,0 +1,108 @@
+import { existsSync, readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import vinext from "vinext";
+import { defineConfig } from "vite";
+import hostingConfig from "./.openai/hosting.json";
+import { readExecutionProfile } from "./scripts/execution-profile.mjs";
+import { configureToolEnvironment } from "./scripts/tool-environment.mjs";
+import { sites } from "./scripts/vite/sites-vite-plugin";
+import { connectorPreview } from "./scripts/vite/connector-preview-plugin.mjs";
+
+const SITE_CREATOR_PLACEHOLDER_DATABASE_ID = "00000000-0000-4000-8000-000000000000";
+
+const { d1, r2 } = hostingConfig;
+
+// macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
+const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === "seatbelt";
+const managedLinux = readExecutionProfile() === "managed-linux";
+
+// Claves privadas para probar en la compu (Mercado Pago, datos bancarios): SERVIDOR/.dev.vars, formato CLAVE=valor.
+function readDevVars(): Record<string, string> {
+    const file = fileURLToPath(new URL("./.dev.vars", import.meta.url));
+    if (!existsSync(file)) return {};
+    const vars: Record<string, string> = {};
+    for (const line of readFileSync(file, "utf8").split(/\r?\n/)) {
+        const m = /^\s*([A-Z_][A-Z0-9_]*)\s*=\s*(.*?)\s*$/.exec(line);
+        if (m && m[2]) vars[m[1]] = m[2].replace(/^(["'])(.*)\1$/, "$2");
+    }
+    return vars;
+}
+
+// Datos de la web publicada en Cloudflare (no son secretos): SERVIDOR/cloudflare.json.
+// Si r2Bucket está vacío la web funciona igual, pero no se pueden subir fotos nuevas desde el administrador.
+function readPublishConfig(): { name?: string; d1DatabaseName?: string; d1DatabaseId?: string; r2Bucket?: string } {
+    const file = fileURLToPath(new URL("./cloudflare.json", import.meta.url));
+    return existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : {};
+}
+
+function bindingConfig(production: boolean) {
+    const publish = production ? readPublishConfig() : {};
+    const bucket = production ? publish.r2Bucket : "site-creator-r2";
+    return {
+        ...(publish.name ? { name: publish.name } : {}),
+        main: "./worker/index.ts",
+        compatibility_flags: ["nodejs_compat"],
+        d1_databases: d1
+            ? [
+                  {
+                      binding: d1,
+                      database_name: publish.d1DatabaseName || "site-creator-d1",
+                      database_id: publish.d1DatabaseId || SITE_CREATOR_PLACEHOLDER_DATABASE_ID,
+                  },
+              ]
+            : [],
+        r2_buckets: r2 && bucket ? [{ binding: r2, bucket_name: bucket }] : [],
+    };
+}
+
+export default defineConfig(async ({ command }) => {
+    configureToolEnvironment(process.cwd());
+
+    // Wrangler snapshots its log path while the Cloudflare plugin is imported.
+    const { cloudflare } = await import("@cloudflare/vite-plugin");
+
+    return {
+        server: {
+            fs: { allow: [fileURLToPath(new URL("..", import.meta.url))] },
+            ...(managedLinux ? { host: "0.0.0.0", allowedHosts: ["terminal.local"] } : {}),
+            ...(isCodexSeatbeltSandbox ? { watch: { useFsEvents: false, usePolling: true } } : {}),
+        },
+        plugins: [
+            vinext(),
+            sites({ mockAuth: !managedLinux }),
+            connectorPreview(),
+            cloudflare({
+                viteEnvironment: { name: "rsc", childEnvironments: ["ssr"] },
+                inspectorPort: false,
+                config: {
+                    ...bindingConfig(command === "build"),
+                    ...(command === "serve" ? { vars: readDevVars() } : {}),
+                    ...(command === "serve"
+                        ? {
+                              services: [
+                                  {
+                                      binding: "CONNECTORS",
+                                      service: "sites-connector-preview",
+                                      entrypoint: "ConnectorPreview",
+                                  },
+                              ],
+                          }
+                        : {}),
+                },
+                ...(command === "serve"
+                    ? {
+                          auxiliaryWorkers: [
+                              {
+                                  config: {
+                                      name: "sites-connector-preview",
+                                      main: "./scripts/connector-preview/worker.mjs",
+                                      compatibility_date: "2026-05-15",
+                                  },
+                              },
+                          ],
+                      }
+                    : {}),
+            }),
+        ],
+    };
+});

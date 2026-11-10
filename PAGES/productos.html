@@ -1,0 +1,1711 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <!-- Metadatos y hojas de estilo de la página -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>__PAGE_TITLE__</title>
+        <meta name="description" content="Zapatillas urbanas, running, botitas y básquet en Pisada." />
+        <meta property="og:title" content="__PAGE_TITLE__" />
+        <meta
+            property="og:description"
+            content="Zapatillas urbanas, running, botitas y básquet en Pisada."
+        />
+        <meta property="og:image" content="__OG_IMAGE__" />
+        <link rel="stylesheet" href="/RECURSOS/ui/a2f3e9da583994acf51e.css" />
+        <link rel="stylesheet" href="/RECURSOS/ui/b38ae0775d1fec9870b4.css" />
+        <link rel="stylesheet" href="/RECURSOS/ui/40d797d6db72f5fdafb3.css" />
+        <link rel="shortcut icon" href="/IMG/favicon.svg" />
+        <link rel="stylesheet" href="/CSS/base.css" />
+        <link rel="stylesheet" href="/RECURSOS/ui/3bbb5e16f2b76fa0c275.css" />
+        <meta name="robots" content="noindex,nofollow" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" />
+        <link rel="stylesheet" href="/CSS/style.css?v=pisada-4" />
+    </head>
+
+    <body data-page-path="/productos" class="pisada-tema">
+        <!-- Menú para celulares -->
+        <div
+            id="mobile-menu-sidenav"
+            class="mobile-menu-sidenav"
+            uk-offcanvas="overlay: true; flip: true; mode: slide"
+        >
+            <div
+                class="mobile-menu-sidenav__offcanvas-bar uk-offcanvas-bar uk-offcanvas-bar--desktop-full uk-offcanvas-bar--mobile-full text--primary"
+            >
+                <button
+                    class="mobile-menu-sidenav__offcanvas-close uk-offcanvas-close text--primary"
+                    type="button"
+                    uk-close
+                ></button>
+                <div class="mobile-menu-sidenav__menu">
+                    <ul class="mobile-menu-sidenav__list uk-nav-default uk-nav-parent-icon" uk-nav>
+                        <li class="mobile-menu-sidenav__list-item">
+                            <a href="/" class="mobile-menu-sidenav__item-link">Inicio</a>
+                        </li>
+                        <li class="mobile-menu-sidenav__list-item uk-parent">
+                            <a href="/productos" class="mobile-menu-sidenav__item-link">
+                                Productos
+                            </a>
+                            <ul
+                                class="mobile-menu-sidenav__sublist uk-nav-default uk-nav-sub uk-nav-parent-icon"
+                                uk-nav
+                            >
+                                __MOBILE_CATEGORIES__
+                            </ul>
+                        </li>
+                        <li class="mobile-menu-sidenav__list-item">
+                            <a href="#contacto" class="mobile-menu-sidenav__item-link">Contacto</a>
+                        </li>
+                        <li class="mobile-menu-sidenav__list-item--divider"></li>
+                    </ul>
+                    <ul
+                        class="mobile-menu-sidenav__list-buttons mobile-menu-sidenav__list uk-nav-default uk-nav-parent-icon"
+                        uk-nav
+                    >
+                        <li>
+                            <a href="/admin" class="mobile-menu-sidenav__item-link">
+                                Administración
+                                <button
+                                    type="button"
+                                    id="login-mobile-btn"
+                                    class="button button--full background--primary background--primary-hover contrast_text--primary contrast_text--primary-hover uk-button uk-button-input border-radius"
+                                    data-label="Iniciar sesión"
+                                    data-spinner-ratio="0.75"
+                                >
+                                    Iniciar sesión
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#register-modal"
+                                class="mobile-menu-sidenav__item-link mobile-menu-sidenav__item-link--button"
+                                uk-toggle
+                            >
+                                Crear cuenta
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Encabezado, navegación y buscador -->
+        <div class="header-announcement background--primary">
+            <p class="header-announcement__text contrast_text--primary">
+                ENVÍOS A TODO EL PAÍS · 3 CUOTAS SIN INTERÉS · CAMBIOS SIN VUELTAS
+            </p>
+        </div>
+
+        <div class="header-menu header-menu--sticky">
+            <div class="uk-container">
+                <nav
+                    class="header-menu__desktop uk-flex uk-flex-middle uk-flex-between uk-visible@m"
+                >
+                    <div class="header-logo header__left nav-overlay uk-flex uk-flex-middle">
+                        <a href="/" class="header-logo__link">
+                            <span class="pisada-logo" aria-label="Pisada"><svg class="pisada-logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M7 21.5c3.2 0 4.6-1.6 6.4-4.6l2-3.3c1.3-2.2 2.6-3.1 4.6-3.1H25v3.4h-4.4c-.9 0-1.5.4-2.2 1.6l-2 3.4c-2.4 4-4.6 6-9.4 6z" fill="#0d0d0f"/></svg><span class="pisada-logo__text">PISADA</span></span>
+                        </a>
+                    </div>
+
+                    <ul class="header-menu__desktop-list nav-overlay uk-flex uk-flex-middle">
+                        <li class="desktop-list__item text--primary">
+                            <a href="/" class="desktop-list__link desktop-list__hover">Inicio</a>
+                        </li>
+                        <li class="desktop-list__item text--primary">
+                            <a href="#" class="desktop-list__link desktop-list__hover">
+                                Productos
+                                <span
+                                    class="desktop-list__down-icon text--primary"
+                                    uk-icon="icon: chevron-down"
+                                ></span>
+                            </a>
+                            <div
+                                class="header-menu__desktop-list__container-list uk-navbar-dropdown uk-navbar-dropdown-width-4"
+                                uk-dropdown="pos: bottom-left; boundary: !.header-menu__desktop-list; boundary-align: true"
+                            >
+                                <a href="/productos" class="desktop-list__hover">
+                                    <div class="uk-flex uk-flex-middle">
+                                        <p
+                                            class="desktop-list__title desktop-list__hover text--primary"
+                                        >
+                                            Productos
+                                        </p>
+                                        <b class="desktop-list__text">(Ver todo)</b>
+                                    </div>
+                                </a>
+                                <hr />
+                                <div
+                                    class="desktop-list__menu uk-navbar-dropdown-grid uk-child-width-1-4"
+                                    uk-grid
+                                >
+                                    __DESKTOP_CATEGORIES__
+                                </div>
+                            </div>
+                        </li>
+                        <li class="desktop-list__item text--primary">
+                            <a href="#contacto" class="desktop-list__link desktop-list__hover">
+                                Contacto
+                            </a>
+                        </li>
+
+                        <li class="desktop-list__item text--primary">
+                            <a
+                                class="uk-navbar-toggle desktop-list__link"
+                                href="#"
+                                uk-toggle="target: .nav-overlay;"
+                            >
+                                <svg
+                                    style="margin-top: -4px"
+                                    width="20"
+                                    height="20"
+                                    viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle
+                                        fill="none"
+                                        stroke="#000"
+                                        stroke-width="1.1"
+                                        cx="9"
+                                        cy="9"
+                                        r="7"
+                                    ></circle>
+                                    <path
+                                        fill="none"
+                                        stroke="#000"
+                                        stroke-width="1.1"
+                                        d="M14,14 L18,18 L14,14 Z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="desktop-list__item text--primary">
+                            <a class="desktop-list__link" href="#">
+                                <svg
+                                    style="margin-top: -4px"
+                                    width="20"
+                                    height="20"
+                                    viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <circle
+                                        fill="none"
+                                        stroke="#000"
+                                        stroke-width="1.1"
+                                        cx="9.9"
+                                        cy="6.4"
+                                        r="4.4"
+                                    ></circle>
+                                    <path
+                                        fill="none"
+                                        stroke="#000"
+                                        stroke-width="1.1"
+                                        d="M1.5,19 C2.3,14.5 5.8,11.2 10,11.2 C14.2,11.2 17.7,14.6 18.5,19.2"
+                                    ></path>
+                                </svg>
+                            </a>
+                            <ul class="uk-nav-sub uk-nav-parent-icon" uk-dropdown>
+                                <li class="desktop-list__subitem text--primary">
+                                    <a
+                                        href="#register-modal"
+                                        class="desktop-list-link__text desktop-list-link__text--bold"
+                                        uk-toggle
+                                    >
+                                        Crear cuenta
+                                    </a>
+                                </li>
+                                <li class="desktop-list__subitem text--primary">
+                                    <a
+                                        href="/admin"
+                                        class="desktop-list-link__text desktop-list-link__text--bold"
+                                    >
+                                        Administración
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li
+                            class="desktop-list__item desktop-list__item--cart desktop-list__item--cart contrast_text--primary"
+                        >
+                            <a
+                                href="#"
+                                uk-toggle="target: #cart-sidenav"
+                                class="desktop-list__link"
+                            >
+                                <svg
+                                    style="margin-top: -3px"
+                                    width="20"
+                                    height="20"
+                                    viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fill="none"
+                                        stroke="#000"
+                                        d="M7.5,7.5V4A2.48,2.48,0,0,1,10,1.5,2.54,2.54,0,0,1,12.5,4V7.5"
+                                    ></path>
+                                    <polygon
+                                        fill="none"
+                                        stroke="#000"
+                                        points="16.5 7.5 3.5 7.5 2.5 18.5 17.5 18.5 16.5 7.5"
+                                    ></polygon>
+                                </svg>
+                                <span class="cart-qty background--primary contrast_text--primary">
+                                    0
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+                        <div class="uk-navbar-item uk-width-expand">
+                            <form
+                                method="GET"
+                                action="/search"
+                                class="uk-search uk-search-navbar uk-width-1-1"
+                                autocomplete="off"
+                            >
+                                <input
+                                    class="header-search__input uk-search-input"
+                                    type="text"
+                                    name="q"
+                                    min-length="2"
+                                    autocomplete="off"
+                                    placeholder="Buscar..."
+                                    required
+                                    autofocus
+                                />
+                            </form>
+                        </div>
+                        <a
+                            class="uk-navbar-toggle"
+                            uk-close
+                            uk-toggle="target: .nav-overlay;"
+                            href="#"
+                        ></a>
+                    </div>
+                </nav>
+
+                <nav class="header-menu__mobile uk-flex uk-flex-middle uk-flex-between uk-hidden@m">
+                    <div class="header-logo nav-overlay uk-flex uk-flex-middle">
+                        <a href="/" class="header-logo__link">
+                            <span class="pisada-logo" aria-label="Pisada"><svg class="pisada-logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M7 21.5c3.2 0 4.6-1.6 6.4-4.6l2-3.3c1.3-2.2 2.6-3.1 4.6-3.1H25v3.4h-4.4c-.9 0-1.5.4-2.2 1.6l-2 3.4c-2.4 4-4.6 6-9.4 6z" fill="#0d0d0f"/></svg><span class="pisada-logo__text">PISADA</span></span>
+                        </a>
+                    </div>
+
+                    <div class="mobile__actions">
+                        <ul
+                            class="mobile__actions-list nav-overlay uk-flex uk-flex-row uk-flex-middle"
+                        >
+                            <li class="actions-list__item text--primary">
+                                <a uk-toggle="target: .nav-overlay;" href="#">
+                                    <svg
+                                        style="margin-top: -4px"
+                                        width="20"
+                                        height="20"
+                                        viewbox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <circle
+                                            fill="none"
+                                            stroke="#000"
+                                            stroke-width="1.1"
+                                            cx="9"
+                                            cy="9"
+                                            r="7"
+                                        ></circle>
+                                        <path
+                                            fill="none"
+                                            stroke="#000"
+                                            stroke-width="1.1"
+                                            d="M14,14 L18,18 L14,14 Z"
+                                        ></path>
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li class="actions-list__item text--primary">
+                                <a
+                                    href="#"
+                                    uk-toggle="target: #cart-sidenav"
+                                    class="actions-list__item actions-list__item--cart text--primary"
+                                >
+                                    <svg
+                                        style="margin-top: -3px"
+                                        width="20"
+                                        height="20"
+                                        viewbox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill="none"
+                                            stroke="#000"
+                                            d="M7.5,7.5V4A2.48,2.48,0,0,1,10,1.5,2.54,2.54,0,0,1,12.5,4V7.5"
+                                        ></path>
+                                        <polygon
+                                            fill="none"
+                                            stroke="#000"
+                                            points="16.5 7.5 3.5 7.5 2.5 18.5 17.5 18.5 16.5 7.5"
+                                        ></polygon>
+                                    </svg>
+                                    <span
+                                        class="cart-qty background--primary contrast_text--primary"
+                                    >
+                                        0
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="actions-list__item text--primary">
+                                <a
+                                    href="#"
+                                    class="mobile__hamburger-btn text--primary"
+                                    uk-toggle="target: #mobile-menu-sidenav"
+                                >
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewbox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <rect x="2" y="4" width="16" height="1"></rect>
+                                        <rect x="2" y="9" width="16" height="1"></rect>
+                                        <rect x="2" y="14" width="16" height="1"></rect>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+                        <div class="uk-navbar-item uk-width-expand">
+                            <form
+                                method="GET"
+                                action="/search"
+                                class="uk-search uk-search-navbar uk-width-1-1"
+                                autocomplete="off"
+                            >
+                                <input
+                                    class="header-search__input uk-search-input"
+                                    type="text"
+                                    name="q"
+                                    min-length="2"
+                                    autocomplete="off"
+                                    placeholder="Buscar..."
+                                    required
+                                    autofocus
+                                />
+                            </form>
+                        </div>
+                        <a
+                            class="uk-navbar-toggle"
+                            uk-close
+                            uk-toggle="target: .nav-overlay;"
+                            href="#"
+                        ></a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Contenido principal. El servidor completa los productos del catálogo. -->
+        <main id="contenido-principal">
+            <section class="category-feed uk-container pisada-browse">
+                <div>
+                    <div class="browse-heading">
+                        <div>
+                            <p class="pisada-eyebrow">EXPLORÁ PISADA</p>
+                            <h1 class="browse-title">__LISTING_TITLE__</h1>
+                            <p class="browse-count" role="status">__LISTING_COUNT__</p>
+                        </div>
+                        <label class="sort-label">
+                            Ordenar por
+                            <select id="product_order" name="product_order">
+                                <option value="4">Destacados</option>
+                                <option value="0">Más nuevos</option>
+                                <option value="1">Más antiguos</option>
+                                <option value="2">Menor precio</option>
+                                <option value="3">Mayor precio</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="browse-layout">
+                        <aside class="pisada-filters">
+                            <details open>
+                                <summary>
+                                    Filtrar modelos
+                                    <span aria-hidden="true">＋</span>
+                                </summary>
+                                <div class="filter-body">
+                                    <label for="category-filter">Categoría</label>
+                                    <select id="category-filter">
+                                        __CATEGORY_OPTIONS__
+                                    </select>
+                                    <fieldset>
+                                        <legend>Talles disponibles</legend>
+                                        <div class="size-filters">
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="34"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 34"
+                                            >
+                                                34
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="35"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 35"
+                                            >
+                                                35
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="36"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 36"
+                                            >
+                                                36
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="37"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 37"
+                                            >
+                                                37
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="38"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 38"
+                                            >
+                                                38
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="39"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 39"
+                                            >
+                                                39
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="40"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 40"
+                                            >
+                                                40
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="41"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 41"
+                                            >
+                                                41
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="42"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 42"
+                                            >
+                                                42
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="43"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 43"
+                                            >
+                                                43
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="size-filter"
+                                                data-size-filter="44"
+                                                aria-pressed="false"
+                                                aria-label="Filtrar por talle 44"
+                                            >
+                                                44
+                                            </button>
+                                        </div>
+                                    </fieldset>
+                                    <label class="stock-label">
+                                        <input id="stock-filter" type="checkbox" />
+                                        Solo modelos con stock
+                                    </label>
+                                    <button type="button" id="clear-filters" class="clear-filters">
+                                        Limpiar filtros
+                                    </button>
+                                </div>
+                            </details>
+                        </aside>
+                        <div class="browse-results">
+                            <div class="products-feed__products pisada-product-grid">
+                                __LISTING_CARDS__
+                            </div>
+                            <div class="browse-more">
+                                <button id="products_feed-btn" type="button" class="pisada-button">
+                                    Ver más modelos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div
+                id="mobile-filter-sidenav"
+                class="mobile-filter-sidenav"
+                uk-offcanvas="overlay: true; flip: true; mode: slide"
+            >
+                <div
+                    class="mobile-filter-sidenav__offcanvas-bar uk-offcanvas-bar uk-offcanvas-bar--desktop-small uk-offcanvas-bar--mobile-full text--primary"
+                >
+                    <button
+                        class="mobile-filter-sidenav__offcanvas-close uk-offcanvas-close text--primary"
+                        type="button"
+                        uk-close
+                    ></button>
+                    <div class="category-feed_content products-feed__content">
+                        <div uk-grid>
+                            <div>
+                                <div class="products-feed__filter">
+                                    <p class="products-feed__filter-title uk-h3 text--primary">
+                                        Categorías
+                                    </p>
+                                    <hr />
+                                    <ul class="products-feed__categories-list">
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/dunk"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                DUNK
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/campus"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                CAMPUS
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/air-force-1"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                AIR FORCE 1
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/jordan-travis"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                JORDAN TRAVIS
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/new-b"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                NEW B
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/suede-xl"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                SUEDE XL
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/jordan"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                JORDAN
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/adi-2000"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                ADI 2000
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/samba"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                SAMBA
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/180"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                180
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/court-graffik"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                COURT GRAFFIK
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/hylane"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                HYLANE
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/stroye"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                STROYE
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/ojota"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                OJOTA
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/forum"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                FORUM
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/drop-step"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                DROP STEP
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/jordan-rm"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                JORDAN RM
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/sk8"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                SK8
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/knu"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                KNU
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/ultrarange"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                ULTRARANGE
+                                            </a>
+                                        </li>
+                                        <li
+                                            class="products-feed__categories-list-item text--primary"
+                                        >
+                                            <a
+                                                href="/old-skool"
+                                                class="products-feed__categories-list-link text--primary text--primary-hover"
+                                            >
+                                                OLD SKOOL
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="pisada-help" id="como-comprar">
+                <div class="uk-container help-inner">
+                    <div>
+                        <p class="pisada-eyebrow">ANTES DE ELEGIR</p>
+                        <h2>
+                            Comprá con toda
+                            <br />
+                            la información.
+                        </h2>
+                        <p>Encontrá tu modelo, elegí el talle y consultanos lo que necesites.</p>
+                        <a
+                            class="pisada-text-link"
+                            href="https://wa.me/5491128383634"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Escribinos por WhatsApp
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                    <div class="pisada-faq">
+                        <details>
+                            <summary>¿Cómo elijo mi talle?</summary>
+                            <p>
+                                Medí la plantilla de una zapatilla que te quede bien y comparala con
+                                la guía del modelo. Cuando una medida no esté publicada, consultanos
+                                antes de comprar.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>¿Cuáles son los medios de pago?</summary>
+                            <p>
+                                La tienda informa pagos por transferencia y efectivo. Consultanos
+                                para coordinar el pago de tu pedido.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>¿Cómo coordino el envío o retiro?</summary>
+                            <p>
+                                Consultanos con tu localidad y código postal para confirmar la
+                                opción de entrega, el costo y el plazo antes de cerrar la compra.
+                            </p>
+                        </details>
+                        <details>
+                            <summary>¿Qué hago si necesito un cambio de talle?</summary>
+                            <p>
+                                Escribinos para conocer las condiciones de cambio y la
+                                disponibilidad del modelo y talle que necesitás.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Datos de contacto y redes sociales -->
+        <footer class="footer" id="contacto">
+            <div class="footer__top">
+                <div class="footer__container uk-container">
+                    <div class="footer__top__items">
+                        <div class="footer__top__item footer__top__payment">
+                            <h5 class="footer__top__title text--primary">Medios de pago</h5>
+                            <div class="footer__top__icons uk-flex-wrap">
+                                <img
+                                    src="/RECURSOS/ui/95609f193fe8449e8f2c.png"
+                                    class="footer__top__icon"
+                                    alt="Medio Pago"
+                                    loading="lazy"
+                                />
+                                <img
+                                    src="/RECURSOS/ui/ccd3d80a7fe286403ce3.png"
+                                    class="footer__top__icon"
+                                    alt="Medio Pago"
+                                    loading="lazy"
+                                />
+                            </div>
+                        </div>
+                        <div class="footer__top__item">
+                            <h5 class="footer__top__title text--primary">Medios de envío</h5>
+                            <div class="footer__top__icons uk-flex uk-flex-wrap">
+                                <img
+                                    src="/RECURSOS/ui/7e168c4a0c82c43a1bb9.png"
+                                    class="footer__top__icon"
+                                    alt="Medio Envio"
+                                    loading="lazy"
+                                />
+                                <img
+                                    src="/RECURSOS/ui/3001f722433a9084dd48.png"
+                                    class="footer__top__icon"
+                                    alt="Medio Envio"
+                                    loading="lazy"
+                                />
+                            </div>
+                        </div>
+                        <div class="footer__top__item">
+                            <h5 class="footer__top__title text--primary">
+                                Nuestras redes sociales
+                            </h5>
+                            <ul class="footer__top__social-media-list uk-flex uk-flex-row">
+                                <li class="footer__top__social-media-item text--primary">
+                                    <a
+                                        href="#contacto"
+                                        class="footer__top__social-media-link"
+                                    >
+                                        <i
+                                            class="fab fa-facebook-f footer__top__social-media-icon"
+                                        ></i>
+                                    </a>
+                                </li>
+                                <li class="footer__top__social-media-item text--primary">
+                                    <a
+                                        href="#contacto"
+                                        class="footer__top__social-media-link"
+                                        aria-label="Instagram de Pisada"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i
+                                            class="fab fa-instagram footer__top__social-media-icon"
+                                        ></i>
+                                    </a>
+                                </li>
+                                <li class="footer__top__social-media-item text--primary">
+                                    <a
+                                        href="#contacto"
+                                        class="footer__top__social-media-link"
+                                        aria-label="TikTok de Pisada"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <i class="fab fa-tiktok footer__top__social-media-icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__top__item">
+                            <h5 class="footer__top__title text--primary">Contacto</h5>
+                            <ul class="footer__top__info-list uk-flex">
+                                <li class="footer__top__info-item text--primary">
+                                    <a
+                                        href="mailto:hola@pisada.com.ar"
+                                        class="footer__top__info-link"
+                                        target="_blank"
+                                    >
+                                        hola@pisada.com.ar
+                                    </a>
+                                </li>
+                                <li class="footer__top__info-item text--primary">
+                                    <a
+                                        href="tel:+541128383634"
+                                        class="footer__top__info-link"
+                                        target="_blank"
+                                    >11 2838-3634</a>
+                                </li>
+                                <li
+                                    class="footer__top__info-item footer__top__info-item--underline text--primary"
+                                >
+                                    <a href="#regret-modal" uk-toggle>Botón de arrepentimiento</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__container uk-container">
+                    <div class="footer__bottom__copyright uk-flex uk-flex-row uk-flex-middle">
+                        <p class="footer__bottom__copyright-text text--primary">
+                            Pisada · Zapatillas para cada paso. Sitio de demostración.
+                        </p>
+                        <a
+                            href="/admin"
+                            class="admin-footer-link"
+                            style="font-size: 10px; margin-left: auto; text-decoration: underline"
+                        >
+                            Administrar tienda
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="chat">
+            <a href="https://wa.me/5491128383634" target="_blank">
+                <div class="chat__bubble chat__bubble--whatsapp">
+                    <i class="chat__icon fab fa-whatsapp"></i>
+                </div>
+            </a>
+        </div>
+
+        <div
+            id="cart-sidenav"
+            class="cart-sidenav"
+            uk-offcanvas="overlay: true; flip: true; mode: slide"
+        >
+            <div
+                class="cart-sidenav__offcanvas-bar uk-offcanvas-bar uk-offcanvas-bar--desktop-medium uk-offcanvas-bar--mobile-full text--primary"
+            >
+                <button
+                    class="cart-sidenav__offcanvas-close uk-offcanvas-close text--primary"
+                    type="button"
+                    uk-close
+                ></button>
+                <div class="cart-sidenav__container">
+                    <div class="cart-sidenav__msg"></div>
+                    <p class="cart-sidenav__title text--primary">Mi carrito</p>
+                    <div class="cart-sidenav__loader" style="display: none">
+                        <div uk-spinner></div>
+                    </div>
+                    <ul class="cart-sidenav__content"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="login-modal" class="modal" uk-modal>
+            <div class="modal__dialog uk-modal-dialog">
+                <form id="login-form" action="#" method="POST" autocomplete="off">
+                    <div class="modal__header uk-modal-header">
+                        <button
+                            class="modal__close text--primary text--primary-hover uk-modal-close-default uk-close-large"
+                            type="button"
+                            uk-close
+                        ></button>
+                        <p class="modal__title uk-modal-title text--primary">Iniciar sesión</p>
+                    </div>
+                    <div class="modal__body uk-modal-body">
+                        <div id="login-alert"></div>
+                        <div id="login-modal-content">
+                            <div class="uk-grid-small uk-child-width-1-1" uk-grid>
+                                <div>
+                                    <div class="field field--login_email">
+                                        <label
+                                            class="field__label field__label--login_email"
+                                            for="login_email"
+                                        >
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="login_email"
+                                            id="login_email"
+                                            class="field__input border-radius"
+                                            data-regex="/^[\w\-\.]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z]{2,7}$/"
+                                            data-message="Ingrese un email válido"
+                                            data-required="1"
+                                        />
+                                        <p class="field__message field__message--login_email"></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="field field--login_password">
+                                        <label
+                                            class="field__label field__label--login_password"
+                                            for="login_password"
+                                        >
+                                            Contraseña
+                                        </label>
+                                        <input
+                                            type="password"
+                                            name="login_password"
+                                            id="login_password"
+                                            class="field__input border-radius"
+                                            data-regex="/^.{6,12}$/"
+                                            data-message="Ingrese una contraseña válida [6-12 caracteres de longitud]"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--login_password"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p
+                                        class="login__message text--primary text--primary-hover uk-text-right"
+                                    >
+                                        Ha olvidado su contraseña?
+                                        <a
+                                            href="#recover-modal"
+                                            class="login__link text--primary-hover"
+                                            uk-toggle
+                                        >
+                                            Recuperar
+                                        </a>
+                                    </p>
+                                    <p
+                                        class="login__message text--primary text--primary-hover uk-text-right"
+                                    >
+                                        Aún no tiene cuenta?
+                                        <a
+                                            href="#register-modal"
+                                            class="login__link text--primary-hover"
+                                            uk-toggle
+                                        >
+                                            Crear cuenta
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        id="login-modal-footer"
+                        class="modal__footer uk-modal-footer uk-flex uk-flex-right"
+                    >
+                        <button
+                            type="submit"
+                            id="login-btn"
+                            class="button button--half background--primary background--primary-hover contrast_text--primary contrast_text--primary-hover uk-button uk-button-normal border-radius"
+                            data-label="Ingresar"
+                            data-spinner-ratio="0.75"
+                        >
+                            Ingresar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="recover-modal" class="modal" uk-modal>
+            <div class="modal__dialog uk-modal-dialog">
+                <form id="recover-form" action="#" method="POST" autocomplete="off">
+                    <div class="modal__header uk-modal-header">
+                        <button
+                            class="modal__close text--primary text--primary-hover uk-modal-close-default uk-close-large"
+                            type="button"
+                            uk-close
+                        ></button>
+                        <p class="modal__title uk-modal-title text--primary">
+                            Recuperar contraseña
+                        </p>
+                    </div>
+                    <div class="modal__body uk-modal-body">
+                        <div id="recover-alert"></div>
+                        <div id="recover-modal-content">
+                            <div class="field field--recover_email">
+                                <label
+                                    class="field__label field__label--recover_email"
+                                    for="recover_email"
+                                >
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    name="recover_email"
+                                    id="recover_email"
+                                    class="field__input border-radius"
+                                    data-regex="/^[\w\-\.]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z]{2,7}$/"
+                                    data-message="Ingrese un email válido"
+                                    data-required="1"
+                                />
+                                <p class="field__message field__message--recover_email"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        id="recover-modal-footer"
+                        class="modal__footer uk-modal-footer uk-flex uk-flex-right"
+                    >
+                        <button
+                            type="submit"
+                            id="recover-btn"
+                            class="button button--half background--primary background--primary-hover contrast_text--primary contrast_text--primary-hover uk-button uk-button-normal border-radius"
+                            data-label="Recuperar"
+                            data-spinner-ratio="0.75"
+                        >
+                            Recuperar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="register-modal" class="modal" uk-modal>
+            <div class="modal__dialog uk-modal-dialog">
+                <form id="register-form" action="#" method="POST" autocomplete="off">
+                    <div class="modal__header uk-modal-header">
+                        <button
+                            class="modal__close text--primary text--primary-hover uk-modal-close-default uk-close-large"
+                            type="button"
+                            uk-close
+                        ></button>
+                        <p class="modal__title uk-modal-title text--primary">Crear cuenta</p>
+                    </div>
+                    <div class="modal__body uk-modal-body" uk-overflow-auto>
+                        <div id="register-alert"></div>
+                        <div id="register-modal-content">
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-1-2">
+                                    <div class="field field--register_name">
+                                        <label
+                                            class="field__label field__label--register_name"
+                                            for="register_name"
+                                        >
+                                            Nombre
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="register_name"
+                                            id="register_name"
+                                            class="field__input border-radius"
+                                            data-regex="/^(?=.{2,45}$)([a-zA-Zá-úÁ-Ú](\s[a-zA-Zá-úÁ-Ú])?(\s)?)*$/"
+                                            data-message="Ingrese un nombre válido"
+                                            data-required="1"
+                                        />
+                                        <p class="field__message field__message--register_name"></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="field field--register_surname">
+                                        <label
+                                            class="field__label field__label--register_surname"
+                                            for="register_surname"
+                                        >
+                                            Apellido
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="register_surname"
+                                            id="register_surname"
+                                            class="field__input border-radius"
+                                            data-regex="/^(?=.{2,45}$)([a-zA-Zá-úÁ-Ú](\s[a-zA-Zá-úÁ-Ú])?(\s)?)*$/"
+                                            data-message="Ingrese un apellido válido"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--register_surname"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--register_email">
+                                        <label
+                                            class="field__label field__label--register_email"
+                                            for="register_email"
+                                        >
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="register_email"
+                                            id="register_email"
+                                            class="field__input border-radius"
+                                            data-regex="/^[\w\-\.]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z]{2,7}$/"
+                                            data-message="Ingrese un email válido"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--register_email"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--register_phone">
+                                        <label
+                                            class="field__label field__label--register_phone"
+                                            for="register_phone"
+                                        >
+                                            Teléfono (opcional)
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            name="register_phone"
+                                            id="register_phone"
+                                            class="field__input border-radius"
+                                            data-regex="/^((\+)?(54|549)?(\s)?(\()?(0)?(?!15)((11)(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{4}[\-\s]{0,3}[\d]{4}|(2|3)[\d]{2}(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{3}[\-\s]{0,3}[\d]{4}|(2|3)[\d]{3}(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{3}[\-\s]{0,3}[\d]{3})|[\+\(]{0,2}(56|569|598|595|55|52|57|58|51|591)[\s\-\(\)]{0,3}[\d]{1}[\s\-\(\)]{0,3}[\d]{1,3}[\s\-\)]{0,3}[\d]{3}[\s\-\)]{0,3}[\d]{3,4})$/"
+                                            data-message="Ingrese un número de teléfono válido con código de area"
+                                            data-required="0"
+                                        />
+                                        <p
+                                            class="field__message field__message--register_phone"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="field field--register_password">
+                                        <label
+                                            class="field__label field__label--register_password"
+                                            for="register_password"
+                                        >
+                                            Contraseña
+                                        </label>
+                                        <input
+                                            type="password"
+                                            name="register_password"
+                                            id="register_password"
+                                            class="field__input border-radius"
+                                            data-regex="/^.{6,12}$/"
+                                            data-message="Ingrese una contraseña válida [6-12 caracteres de longitud]"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--register_password"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="field field--register_repeat_password">
+                                        <label
+                                            class="field__label field__label--register_repeat_password"
+                                            for="register_repeat_password"
+                                        >
+                                            Repetir contraseña
+                                        </label>
+                                        <input
+                                            type="password"
+                                            name="register_repeat_password"
+                                            id="register_repeat_password"
+                                            class="field__input border-radius"
+                                            data-regex="/^.{6,12}$/"
+                                            data-message="Ingrese una contraseña válida [6-12 caracteres de longitud]"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--register_repeat_password"
+                                        ></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        id="register-modal-footer"
+                        class="modal__footer uk-modal-footer uk-flex uk-flex-right"
+                    >
+                        <button
+                            type="submit"
+                            id="register-btn"
+                            class="button button--half background--primary background--primary-hover contrast_text--primary contrast_text--primary-hover uk-button uk-button-normal border-radius"
+                            data-label="Crear cuenta"
+                            data-spinner-ratio="0.75"
+                        >
+                            Crear cuenta
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="wholesaler-modal" class="modal" uk-modal>
+            <div class="modal__dialog uk-modal-dialog">
+                <form id="wholesaler-form" action="#" method="POST" autocomplete="off">
+                    <div class="modal__header uk-modal-header">
+                        <button
+                            class="modal__close text--primary text--primary-hover uk-modal-close-default uk-close-large"
+                            type="button"
+                            uk-close
+                        ></button>
+                        <p class="modal__title uk-modal-title text--primary">
+                            Solicitar cuenta mayorista
+                        </p>
+                        <p class="modal__subtitle uk-text-justify">
+                            Usted solicitará una cuenta mayorista para poder acceder a nuestra lista
+                            de productos mayoristas. Esta solicitud será revisada a la brevedad y
+                            será notificado por email cuando la verificación haya concluído.
+                        </p>
+                    </div>
+                    <div class="modal__body uk-modal-body" uk-overflow-auto>
+                        <div id="wholesaler-alert"></div>
+                        <div id="wholesaler-modal-content">
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-1-2">
+                                    <div class="field field--wholesaler_name">
+                                        <label
+                                            class="field__label field__label--wholesaler_name"
+                                            for="wholesaler_name"
+                                        >
+                                            Nombre
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="wholesaler_name"
+                                            id="wholesaler_name"
+                                            class="field__input border-radius"
+                                            data-regex="/^(?=.{2,45}$)([a-zA-Zá-úÁ-Ú](\s[a-zA-Zá-úÁ-Ú])?(\s)?)*$/"
+                                            data-message="Ingrese un nombre válido"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--wholesaler_name"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="field field--wholesaler_surname">
+                                        <label
+                                            class="field__label field__label--wholesaler_surname"
+                                            for="wholesaler_surname"
+                                        >
+                                            Apellido
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="wholesaler_surname"
+                                            id="wholesaler_surname"
+                                            class="field__input border-radius"
+                                            data-regex="/^(?=.{2,45}$)([a-zA-Zá-úÁ-Ú](\s[a-zA-Zá-úÁ-Ú])?(\s)?)*$/"
+                                            data-message="Ingrese un apellido válido"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--wholesaler_surname"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--wholesaler_email">
+                                        <label
+                                            class="field__label field__label--wholesaler_email"
+                                            for="wholesaler_email"
+                                        >
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="wholesaler_email"
+                                            id="wholesaler_email"
+                                            class="field__input border-radius"
+                                            data-regex="/^[\w\-\.]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z]{2,7}$/"
+                                            data-message="Ingrese un email válido"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--wholesaler_email"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--wholesaler_phone">
+                                        <label
+                                            class="field__label field__label--wholesaler_phone"
+                                            for="wholesaler_phone"
+                                        >
+                                            Teléfono
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            name="wholesaler_phone"
+                                            id="wholesaler_phone"
+                                            class="field__input border-radius"
+                                            data-regex="/^((\+)?(54|549)?(\s)?(\()?(0)?(?!15)((11)(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{4}[\-\s]{0,3}[\d]{4}|(2|3)[\d]{2}(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{3}[\-\s]{0,3}[\d]{4}|(2|3)[\d]{3}(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{3}[\-\s]{0,3}[\d]{3})|[\+\(]{0,2}(56|569|598|595|55|52|57|58|51|591)[\s\-\(\)]{0,3}[\d]{1}[\s\-\(\)]{0,3}[\d]{1,3}[\s\-\)]{0,3}[\d]{3}[\s\-\)]{0,3}[\d]{3,4})$/"
+                                            data-message="Ingrese un número de teléfono válido con código de area"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--wholesaler_phone"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="field field--wholesaler_password">
+                                        <label
+                                            class="field__label field__label--wholesaler_password"
+                                            for="wholesaler_password"
+                                        >
+                                            Contraseña
+                                        </label>
+                                        <input
+                                            type="password"
+                                            name="wholesaler_password"
+                                            id="wholesaler_password"
+                                            class="field__input border-radius"
+                                            data-regex="/^.{6,12}$/"
+                                            data-message="Ingrese una contraseña válida [6-12 caracteres de longitud]"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--wholesaler_password"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="field field--wholesaler_repeat_password">
+                                        <label
+                                            class="field__label field__label--wholesaler_repeat_password"
+                                            for="wholesaler_repeat_password"
+                                        >
+                                            Repetir contraseña
+                                        </label>
+                                        <input
+                                            type="password"
+                                            name="wholesaler_repeat_password"
+                                            id="wholesaler_repeat_password"
+                                            class="field__input border-radius"
+                                            data-regex="/^.{6,12}$/"
+                                            data-message="Ingrese una contraseña válida [6-12 caracteres de longitud]"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--wholesaler_repeat_password"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--wholesaler_message">
+                                        <label
+                                            class="field__label field__label--wholesaler_message"
+                                            for="wholesaler_message"
+                                        >
+                                            Mensaje (opcional)
+                                        </label>
+                                        <textarea
+                                            name="wholesaler_message"
+                                            id="wholesaler_message"
+                                            class="field__textarea border-radius"
+                                            data-regex="/^[\s\S]{20,5000}$/"
+                                            data-message="Ingrese un mensaje válido [Debe contener al menos 20 caracteres]"
+                                            data-required="0"
+                                        ></textarea>
+                                        <p
+                                            class="field__message field__message--wholesaler_message"
+                                        ></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        id="wholesaler-modal-footer"
+                        class="modal__footer uk-modal-footer uk-flex uk-flex-right"
+                    >
+                        <button
+                            type="submit"
+                            id="wholesaler-btn"
+                            class="button button--half background--primary background--primary-hover contrast_text--primary contrast_text--primary-hover uk-button uk-button-normal border-radius"
+                            data-label="Enviar solicitud"
+                            data-spinner-ratio="0.75"
+                        >
+                            Enviar solicitud
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="regret-modal" class="modal" uk-modal>
+            <div class="modal__dialog uk-modal-dialog">
+                <form id="regret-form" action="#" method="POST" autocomplete="off">
+                    <div class="modal__header uk-modal-header">
+                        <button
+                            class="modal__close text--primary text--primary-hover uk-modal-close-default uk-close-large"
+                            type="button"
+                            uk-close
+                        ></button>
+                        <p class="modal__title uk-modal-title text--primary">
+                            Solicitud: cancelación de compra
+                        </p>
+                        <p class="modal__subtitle uk-text-justify">
+                            La solicitud tendrá validez si es realizada dentro de los plazos
+                            determinados en la
+                            <a
+                                target="_blank"
+                                rel="noreferrer noreferrer"
+                                href="https://www.boletinoficial.gob.ar/detalleAviso/primera/235729/20201005"
+                                style="text-decoration: underline; color: blue"
+                            >
+                                Resolución 424/2020
+                            </a>
+                            de la Secretaría de Comercio Interior y no se traten de productos
+                            exceptuados como productos personalizados y todos los comprendidos en el
+                            art. 1116 del Código Civil y Comercial.
+                        </p>
+                    </div>
+                    <div class="modal__body uk-modal-body" uk-overflow-auto>
+                        <div id="regret-alert"></div>
+                        <div id="regret-modal-content">
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--regret_full_name">
+                                        <label
+                                            class="field__label field__label--regret_full_name"
+                                            for="regret_full_name"
+                                        >
+                                            Nombre completo
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="regret_full_name"
+                                            id="regret_full_name"
+                                            class="field__input border-radius"
+                                            data-regex="/^(?=.{5,90}$)([a-zA-Zá-úÁ-Ú](\s[a-zA-Zá-úÁ-Ú])?(\s)?)*$/"
+                                            data-message="Ingrese un nombre y apellido válidos"
+                                            data-required="1"
+                                        />
+                                        <p
+                                            class="field__message field__message--regret_full_name"
+                                        ></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--regret_email">
+                                        <label
+                                            class="field__label field__label--regret_email"
+                                            for="regret_email"
+                                        >
+                                            Email (con el que se realizó la compra)
+                                        </label>
+                                        <input
+                                            type="email"
+                                            name="regret_email"
+                                            id="regret_email"
+                                            class="field__input border-radius"
+                                            data-regex="/^[\w\-\.]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z]{2,7}$/"
+                                            data-message="Ingrese un email válido"
+                                            data-required="1"
+                                        />
+                                        <p class="field__message field__message--regret_email"></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--regret_phone">
+                                        <label
+                                            class="field__label field__label--regret_phone"
+                                            for="regret_phone"
+                                        >
+                                            Teléfono
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            name="regret_phone"
+                                            id="regret_phone"
+                                            class="field__input border-radius"
+                                            data-regex="/^((\+)?(54|549)?(\s)?(\()?(0)?(?!15)((11)(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{4}[\-\s]{0,3}[\d]{4}|(2|3)[\d]{2}(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{3}[\-\s]{0,3}[\d]{4}|(2|3)[\d]{3}(\))?[\-\s]{0,3}(15)?[\-\s]{0,3}[\d]{3}[\-\s]{0,3}[\d]{3})|[\+\(]{0,2}(56|569|598|595|55|52|57|58|51|591)[\s\-\(\)]{0,3}[\d]{1}[\s\-\(\)]{0,3}[\d]{1,3}[\s\-\)]{0,3}[\d]{3}[\s\-\)]{0,3}[\d]{3,4})$/"
+                                            data-message="Ingrese un número de teléfono válido con código de area"
+                                            data-required="1"
+                                        />
+                                        <p class="field__message field__message--regret_phone"></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--regret_order">
+                                        <label
+                                            class="field__label field__label--regret_order"
+                                            for="regret_order"
+                                        >
+                                            Número de orden sin # (te llegó por email al momento de
+                                            realizar la compra)
+                                        </label>
+                                        <input
+                                            type="number"
+                                            name="regret_order"
+                                            id="regret_order"
+                                            class="field__input border-radius"
+                                            data-regex="/^[1-9]{1}([0-9]?)*$/"
+                                            data-message="Ingrese un número válido"
+                                            data-required="1"
+                                        />
+                                        <p class="field__message field__message--regret_order"></p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="field field--regret_message">
+                                        <label
+                                            class="field__label field__label--regret_message"
+                                            for="regret_message"
+                                        >
+                                            Aclaraciones: información sobre el inconveniente,
+                                            productos que quieres devolver, dirección de retiro,
+                                            otras observaciones.
+                                        </label>
+                                        <textarea
+                                            name="regret_message"
+                                            id="regret_message"
+                                            class="field__textarea border-radius"
+                                            data-regex="/^[\s\S]{20,5000}$/"
+                                            data-message="Ingrese un mensaje válido [Debe contener al menos 20 caracteres]"
+                                            data-required="1"
+                                        ></textarea>
+                                        <p
+                                            class="field__message field__message--regret_message"
+                                        ></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        id="regret-modal-footer"
+                        class="modal__footer uk-modal-footer uk-flex uk-flex-right"
+                    >
+                        <button
+                            type="submit"
+                            id="regret-btn"
+                            class="button button--half background--primary background--primary-hover contrast_text--primary contrast_text--primary-hover uk-button uk-button-normal border-radius"
+                            data-label="Enviar"
+                            data-spinner-ratio="0.75"
+                        >
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="/RECURSOS/ui/477dc057a5a78d24657e.js"></script>
+        <script src="/RECURSOS/ui/f72170e1fb4eab56489f.js"></script>
+        <script src="/JS/catalogo.js"></script>
+        <script src="/JS/main.js?v=pisada-4" defer></script>
+    </body>
+</html>

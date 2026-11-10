@@ -1,0 +1,280 @@
+@use "mixins" as m;
+
+/* Adaptaciones para tabletas y celulares, en el orden original. */
+@include m.desde(960px) {
+    .pisada-filters details > summary {
+        pointer-events: none;
+    }
+    .pisada-filters details > .filter-body {
+        display: block !important;
+    }
+}
+@include m.hasta(1199px) {
+    .hero-image {
+        height: 415px;
+    }
+    .hero-copy h1 {
+        font-size: 47px;
+    }
+    .pisada-tema .block-products-feed__products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .browse-layout {
+        grid-template-columns: 195px minmax(0, 1fr);
+        gap: 25px;
+    }
+    .pisada-product-grid {
+        gap: 28px 15px;
+    }
+}
+@include m.hasta(959px) {
+    .hero-image {
+        height: 370px;
+    }
+    .hero-copy h1 {
+        font-size: 39px;
+    }
+    .hero-copy {
+        padding-top: 8px;
+    }
+    .hero-copy > p:not(.pisada-eyebrow) {
+        font-size: 13px;
+    }
+    .hero-foot {
+        margin-top: 30px;
+    }
+    .hero-actions {
+        gap: 15px;
+    }
+    .pisada-button {
+        font-size: 11px;
+        padding: 0 18px;
+        gap: 15px;
+    }
+    .browse-layout {
+        display: block;
+    }
+    .pisada-filters {
+        position: static;
+        margin-bottom: 25px;
+    }
+    .pisada-filters summary span {
+        display: block;
+    }
+    .pisada-filters details {
+        padding: 15px;
+    }
+    .filter-body {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 15px;
+    }
+    .filter-body > label:first-child {
+        grid-column: 1;
+    }
+    .filter-body select {
+        grid-column: 1;
+    }
+    .filter-body fieldset {
+        grid-column: 2;
+        grid-row: 1/4;
+        margin: 0;
+    }
+    .size-filters {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+    .pisada-size-guide {
+        gap: 30px;
+    }
+    .help-inner,
+    .pisada-contact {
+        gap: 35px;
+    }
+    .section-heading h2 {
+        font-size: 28px;
+    }
+    .category-tiles {
+        gap: 15px;
+    }
+    .category-tile small {
+        font-size: 7px;
+    }
+}
+@include m.hasta(639px) {
+    .pisada-search {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .pisada-search input {
+        font-size: 12px;
+    }
+    .pisada-tema .header-logo__image {
+        max-width: 175px;
+    }
+    .hero-copy h1 {
+        font-size: 43px;
+        margin-bottom: 15px;
+    }
+    .pisada-eyebrow {
+        font-size: 9px !important;
+        margin-bottom: 14px !important;
+    }
+    .hero-copy > p:not(.pisada-eyebrow) {
+        max-width: 310px;
+        margin-bottom: 22px;
+    }
+    .hero-foot {
+        display: none;
+    }
+    .hero-image {
+        height: 330px;
+    }
+    .hero-image-label {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 12px 15px;
+        font-size: 9px;
+    }
+    .hero-image-label strong {
+        font-size: 12px;
+    }
+    .section-heading {
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    .section-heading h2 {
+        font-size: 25px;
+    }
+    .section-heading > .pisada-text-link {
+        font-size: 10px;
+        max-width: 100px;
+        line-height: 1.7;
+        text-align: right;
+    }
+    .category-tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 15px;
+    }
+    .category-tile strong {
+        font-size: 17px;
+    }
+    .category-tile small {
+        font-size: 7px;
+        letter-spacing: 0.02em;
+    }
+    .pisada-tema .block-products-feed {
+        padding-top: 30px;
+        padding-bottom: 35px;
+    }
+    .pisada-tema .block-products-feed__products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 15px;
+    }
+    .pisada-tema .products-feed__product-name,
+    .pisada-tema .block-products-feed__product-name {
+        font-size: 11px;
+    }
+    .pisada-tema .products-feed__product-price,
+    .pisada-tema .block-products-feed__product-price {
+        font-size: 12px;
+    }
+    .pisada-tema .products-feed__product-additional,
+    .pisada-tema .block-products-feed__product-additional {
+        font-size: 9px;
+    }
+    .pisada-browse {
+        padding-top: 28px !important;
+        padding-bottom: 35px !important;
+    }
+    .browse-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 20px;
+    }
+    .browse-title {
+        font-size: 29px;
+        overflow-wrap: anywhere;
+    }
+    .sort-label {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .sort-label select {
+        margin: 0;
+        min-width: 155px;
+    }
+    .pisada-product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 14px;
+    }
+    .filter-body {
+        display: block;
+    }
+    .filter-body fieldset {
+        margin: 20px 0;
+    }
+    .filter-body select {
+        height: 40px;
+    }
+    .size-filters {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+    .stock-label {
+        font-size: 12px;
+    }
+    .pisada-tema .product-vip__title {
+        font-size: 28px;
+    }
+    .pisada-size-guide {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 35px;
+        padding-top: 30px;
+    }
+    .pisada-size-guide h2 {
+        font-size: 27px;
+    }
+    .pisada-size-guide table {
+        font-size: 12px;
+    }
+    .pisada-help {
+        padding: 35px 0;
+    }
+    .help-inner,
+    .pisada-contact {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .help-inner h2 {
+        font-size: 29px;
+    }
+    .pisada-contact {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    .pisada-contact h2 {
+        font-size: 27px;
+    }
+    .pisada-faq summary {
+        font-size: 12px;
+    }
+    .pisada-socials > a {
+        padding: 15px 0;
+    }
+    .replica-result-empty {
+        padding: 22px;
+    }
+    .replica-result-empty h2 {
+        font-size: 21px;
+    }
+}
+
+.footer#contacto {
+    scroll-margin-top: 100px;
+}

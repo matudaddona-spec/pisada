@@ -1,0 +1,167 @@
+.pisada-browse {
+    padding-top: 42px !important;
+    padding-bottom: 65px !important;
+}
+.browse-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 30px;
+    & .pisada-eyebrow {
+        margin-bottom: 10px !important;
+    }
+}
+.browse-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+.browse-count {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+.sort-label {
+    font-size: 10px;
+    color: #666;
+    display: block;
+    white-space: nowrap;
+    & select {
+        display: block;
+        margin-top: 6px;
+        padding: 10px 30px 10px 10px;
+        background: #fff;
+        border: 1px solid var(--line);
+        font: inherit;
+        font-size: 12px;
+        color: #111;
+        min-width: 170px;
+    }
+}
+.browse-layout {
+    display: grid;
+    grid-template-columns: 215px minmax(0, 1fr);
+    gap: 38px;
+    align-items: start;
+}
+.pisada-filters {
+    position: sticky;
+    top: 95px;
+    & details {
+        border: 1px solid var(--line);
+        padding: 20px;
+    }
+    & summary {
+        font-size: 14px;
+        font-weight: 700;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    & summary::-webkit-details-marker {
+        display: none;
+    }
+    & summary span {
+        display: none;
+    }
+}
+.filter-body {
+    padding-top: 22px;
+    & > label:not(.stock-label),
+    & legend {
+        font-size: 11px;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 10px;
+    }
+    & select {
+        width: 100%;
+        background: #fff;
+        padding: 10px 7px;
+        border: 1px solid var(--line);
+        font: inherit;
+        font-size: 11px;
+        color: #111;
+        box-sizing: border-box;
+    }
+    & fieldset {
+        border: 0;
+        margin: 24px 0;
+        padding: 0;
+        min-width: 0;
+    }
+}
+.size-filters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px;
+}
+.size-filter {
+    background: #f4f4f2;
+    border: 1px solid transparent;
+    color: #111;
+    min-height: 34px;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 0;
+}
+.size-filter[aria-pressed="true"] {
+    background: #111;
+    color: #fff;
+}
+.stock-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    & input {
+        accent-color: #111;
+    }
+}
+.clear-filters {
+    margin-top: 20px;
+    border: 0;
+    background: none;
+    padding: 0;
+    font-size: 11px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+.pisada-product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 34px 22px;
+    margin: 0 !important;
+    align-items: start;
+    &:before,
+    &:after {
+        display: none !important;
+    }
+}
+.browse-more {
+    text-align: center;
+    margin-top: 36px;
+}
+.replica-result-empty {
+    grid-column: 1/-1;
+    background: var(--paper);
+    padding: 32px;
+    min-height: 220px;
+    box-sizing: border-box;
+    & h2 {
+        font-size: 23px;
+    }
+    & p {
+        font-size: 13px;
+        color: #666;
+    }
+}
+.pisada-tema .product-vip {
+    padding-top: 35px !important;
+    padding-bottom: 60px !important;
+}

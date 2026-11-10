@@ -1,0 +1,69 @@
+/* Carrito, cantidades y mensajes de la tienda. */
+.replica-feedback {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #555;
+}
+.replica-cart-line {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 15px;
+    align-items: start;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 0;
+    font-size: 14px;
+}
+.replica-cart-line img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+}
+.replica-cart-line p {
+    margin: 0 0 7px;
+}
+.replica-cart-line button {
+    border: 0;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    color: #000;
+}
+.replica-cart-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.replica-cart-summary {
+    padding: 25px 0 0;
+}
+.replica-cart-summary .total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.replica-cart-summary .keep-shopping {
+    display: block;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 18px;
+    font-size: 14px;
+}
+.replica-cart-empty {
+    text-align: center;
+    padding: 28px 0;
+    font-size: 16px;
+}
+.replica-result-empty {
+    padding: 40px 0;
+    font-size: 16px;
+}
+.replica-checkout .summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid #ddd;
+    gap: 24px;
+}

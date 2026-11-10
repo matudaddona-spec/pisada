@@ -1,0 +1,15 @@
+{
+    "name": "web-de-zapatillas",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Pisada. HTML, SASS, JavaScript e imágenes separados por carpetas.",
+    "scripts": {
+        "instalar": "npm --prefix SERVIDOR ci",
+        "dev": "npm --prefix SERVIDOR run dev",
+        "build": "npm --prefix SERVIDOR run build",
+        "sass": "npm --prefix SERVIDOR run sass",
+        "sass:watch": "npm --prefix SERVIDOR run sass:watch",
+        "db:local": "npm --prefix SERVIDOR run db:local",
+        "check": "npm --prefix SERVIDOR run check"
+    }
+}
