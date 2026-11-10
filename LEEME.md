@@ -113,6 +113,17 @@ La copia es independiente del catálogo de Empretienda y necesita una integraci�
 
 La configuración exportada conserva los nombres de las conexiones `DB` y `BUCKET`. No tiene un sitio publicado asignado. Antes de publicar, elegí el dominio o subdominio del negocio y comprobá que el enlace público respete la preferencia de usar el nombre del cliente o uno neutro.
 
+## Web publicada (Cloudflare + GitHub)
+
+- Dirección: https://pisada.matudaddona.workers.dev
+- Código: repositorio privado `matudaddona-spec/pisada` en GitHub.
+- **Cada vez que subís cambios a la rama `main` de GitHub, Cloudflare arma y publica la web sola** (tarda 1 o 2 minutos). El avance se ve en Cloudflare → Workers & Pages → pisada → Deployments.
+- Para subir cambios desde la compu: `git add -A`, `git commit -m "qué cambié"` y `git push`.
+- Base de datos: D1 `pisada-db` (su ID está en `SERVIDOR/cloudflare.json`). Las tablas se crearon con `npm run db:remoto`.
+- Claves privadas en producción (Cloudflare → pisada → Settings → Variables and Secrets): `SESSION_SECRET` (ya está), `MP_ACCESS_TOKEN` y los datos bancarios `BANK_*`. Nunca van en el código.
+- Fotos nuevas desde el administrador: necesitan un bucket R2. Cuando lo actives en Cloudflare, poné su nombre en `r2Bucket` de `SERVIDOR/cloudflare.json`.
+- Publicar a mano sin GitHub: `npm --prefix SERVIDOR run publicar`.
+
 ## Comprobaciones
 
 `npm run check` ejecuta las pruebas de búsqueda, filtros, inventario, imágenes, eliminación y restauración.
