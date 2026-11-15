@@ -1,24 +1,37 @@
-.pisada-tema .product-vip__title {
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+@use "variables" as v;
+
+// ==========================================================
+// Ficha del producto: galería, talles, colores y guía de medidas.
+// ==========================================================
+
+.pisada-tema {
+    .product-vip__title {
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+    }
+
+    .product-vip__price {
+        font-size: 23px;
+        margin-top: 15px;
+    }
 }
-.pisada-tema .product-vip__price {
-    font-size: 23px;
-    margin-top: 15px;
-}
+
 .product-quality {
     font-size: 11px !important;
     color: #666;
     margin-top: -15px !important;
     margin-bottom: 20px !important;
+
     &:empty {
         display: none;
     }
 }
+
 .pisada-tema .product-vip__carrousel-image {
     box-shadow: none !important;
 }
+
 .pisada-guide-link {
     font-size: 11px;
     text-decoration: underline;
@@ -26,16 +39,19 @@
     margin-bottom: 15px;
     display: block;
 }
+
 .product-help {
     font-size: 11px !important;
     color: #666;
     margin-top: 20px;
-    & a {
+
+    a {
         display: block;
         text-decoration: underline;
         color: #111;
     }
 }
+
 .pisada-size-guide {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -44,49 +60,59 @@
     padding-top: 45px;
     border-top: 1px solid var(--line);
     scroll-margin-top: 110px;
-    & h2 {
+
+    h2 {
         font-size: 32px;
         font-weight: 700;
         margin: 0 0 20px;
     }
-    & p {
+
+    p {
         font-size: 13px;
         line-height: 1.8;
         max-width: 430px;
     }
-    & .guide-note {
+
+    .guide-note {
         font-size: 11px;
         color: #666;
     }
-    & table {
+
+    table {
         width: 100%;
         border-collapse: collapse;
         font-size: 12px;
     }
-    & td,
-    & th {
+
+    td,
+    th {
         border-bottom: 1px solid var(--line);
         padding: 10px 14px;
         text-align: left;
     }
-    & thead {
+
+    thead {
         background: var(--paper);
     }
-    & td a {
+
+    td a {
         font-size: 11px;
         text-decoration: underline;
     }
 }
+
 .original-details {
     margin-top: 26px;
     border-top: 1px solid var(--line);
     padding: 20px 0;
     font-size: 12px;
-    & summary {
+
+    summary {
         cursor: pointer;
         font-weight: 700;
     }
-    & > div {
+
+    > div {
         max-width: 650px;
         line-height: 1.8;
         margin-top: 20px;

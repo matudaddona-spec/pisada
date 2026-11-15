@@ -1,5 +1,9 @@
-// Estilos principales de Pisada.
-// Cada archivo corresponde a una parte de la tienda.
+// ==========================================================
+// Pisada · tienda de zapatillas — hoja de estilos principal
+// Se compila a CSS/style.css con: npm run sass
+// Cada partial corresponde a una parte de la tienda.
+// ==========================================================
+
 @use "carrito";
 @use "header";
 @use "home";

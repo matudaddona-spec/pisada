@@ -1,87 +1,94 @@
 @use "variables" as v;
+@use "extends";
+@use "mixins" as m;
 
-/* Catálogo, filtros, ficha del producto y pie de página. */
+// ==========================================================
+// Encabezado: cinta de anuncios, menú, logo y buscador.
+// ==========================================================
 
 .pisada-tema {
-    --ink: #{v.$tinta};
+    --ink: #{v.$texto};
     --muted: #{v.$gris-texto};
     --line: #{v.$borde};
-    --paper: #{v.$fondo-suave};
+    --paper: #{v.$superficie};
+
+    h1,
+    h2 {
+        letter-spacing: -0.045em;
+        line-height: 1.12;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+        outline: 2px solid #111;
+        outline-offset: 4px;
+    }
+
+    .header-announcement {
+        height: 32px;
+        @include m.flex-fila(center);
+
+        &__text {
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            margin: 0;
+        }
+    }
+
+    .header-menu {
+        border-bottom: 1px solid var(--line);
+
+        &__desktop,
+        &__desktop-list {
+            min-height: 78px;
+        }
+    }
+
+    .header-logo__image {
+        max-width: 235px;
+    }
 }
-.pisada-tema h1,
-.pisada-tema h2 {
-    letter-spacing: -0.045em;
-    line-height: 1.12;
-}
-.pisada-tema a:focus-visible,
-.pisada-tema button:focus-visible,
-.pisada-tema input:focus-visible,
-.pisada-tema select:focus-visible {
-    outline: 2px solid #111;
-    outline-offset: 4px;
-}
-.pisada-tema .header-announcement {
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.pisada-tema .header-announcement__text {
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    margin: 0;
-}
-.pisada-tema .header-menu {
-    border-bottom: 1px solid var(--line);
-}
-.pisada-tema .header-menu__desktop,
-.pisada-tema .header-menu__desktop-list {
-    min-height: 78px;
-}
-.pisada-tema .header-logo__image {
-    max-width: 235px;
-}
+
 .pisada-search-strip {
     border-bottom: 1px solid var(--line);
     background: #fafaf8;
 }
+
 .pisada-search {
-    display: flex;
-    align-items: center;
+    @include m.flex-fila();
     max-width: 700px;
     padding-top: 10px;
     padding-bottom: 10px;
     gap: 10px;
+
+    input {
+        border: 0;
+        background: transparent;
+        color: #111;
+        width: 100%;
+        height: 32px;
+        font: inherit;
+        font-size: 13px;
+        outline-offset: 0;
+    }
+
+    button {
+        background: transparent;
+        border: 0;
+        width: 40px;
+        height: 32px;
+        cursor: pointer;
+        color: #111;
+    }
 }
-.pisada-search input {
-    border: 0;
-    background: transparent;
-    color: #111;
-    width: 100%;
-    height: 32px;
-    font: inherit;
-    font-size: 13px;
-    outline-offset: 0;
-}
-.pisada-search button {
-    background: transparent;
-    border: 0;
-    width: 40px;
-    height: 32px;
-    cursor: pointer;
-    color: #111;
-}
+
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    // Texto sólo para lectores de pantalla (accesibilidad).
+    @extend %solo-lectores;
 }
+
 .pisada-eyebrow {
     font-size: 10px !important;
     font-weight: 700 !important;

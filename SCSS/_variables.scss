@@ -1,4 +1,9 @@
-// Colores y tipografías de la identidad de Pisada.
+// ==========================================================
+// Variables de Pisada: colores, tipografías y puntos de corte.
+// Si cambia la identidad, alcanza con modificar este archivo y recompilar.
+// ==========================================================
+
+// Colores (tema oscuro con acento lima)
 $fondo: #0d0d0f;
 $superficie: #16161a;
 $superficie-2: #1f1f25;
@@ -6,10 +11,16 @@ $borde: #2b2b33;
 $texto: #f2f2ee;
 $gris-texto: #9b9ba5;
 $acento: #c6ff3d;
-$tinta-acento: #0d0d0f;
+$tinta-acento: $fondo;
+
+// Tipografía
 $fuente-titulos: "Archivo", "Arial Black", sans-serif;
 $fuente-texto: "Inter", "Segoe UI", Arial, sans-serif;
 
-// Nombres anteriores, usados por los módulos existentes.
-$tinta: $texto;
-$fondo-suave: $superficie;
+// Puntos de corte (mobile)
+$escritorio: 1199px;
+$escritorio-chico: 960px;
+$tablet: 959px;
+$panel-tablet: 900px;
+$celular: 639px;
+$panel-celular: 600px;

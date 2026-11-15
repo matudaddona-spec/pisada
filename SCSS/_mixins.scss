@@ -1,12 +1,38 @@
-// Puntos de corte reutilizables para el diseño adaptable.
+// ==========================================================
+// Mixins reutilizables
+// ==========================================================
+
+// Media query para pantallas de hasta cierto ancho.
+// Uso: @include m.hasta(v.$tablet) { ... }
 @mixin hasta($ancho) {
     @media (max-width: $ancho) {
         @content;
     }
 }
 
+// Media query para pantallas desde cierto ancho.
 @mixin desde($ancho) {
     @media (min-width: $ancho) {
         @content;
+    }
+}
+
+// Fila con flexbox y elementos centrados en vertical.
+// Los parámetros en null no generan CSS (por ejemplo, si no se pasa $gap).
+@mixin flex-fila($justificar: null, $gap: null) {
+    display: flex;
+    align-items: center;
+    justify-content: $justificar;
+    gap: $gap;
+}
+
+// Botón con colores de fondo y texto, y su estado hover.
+@mixin boton-colores($texto, $fondo-hover, $texto-hover, $fondo: null) {
+    background: $fondo;
+    color: $texto;
+
+    &:hover {
+        background: $fondo-hover;
+        color: $texto-hover;
     }
 }
